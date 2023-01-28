@@ -1190,15 +1190,7 @@
                 // window.addEventListener("click", resetIdleTime); //reset idle time when click
                 // window.addEventListener("touchstart", resetIdleTime); //rest idle time when touch
             
-            //serviceWorker
-            if ("serviceWorker" in navigator) {
-                console.log("Will service worker register?");
-                navigator.serviceWorker.register("service-worker.js").then(function(reg){
-                    console.log("Yes it did.");
-                }).catch(function(err) {
-                    console.log("No it didn't. This happened: ", err)
-                });
-            }
+
         </script>
     </body>
 </html>
