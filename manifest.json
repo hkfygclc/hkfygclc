@@ -1,0 +1,15 @@
+{
+    "short_name": "HKFYGCLC",
+    "name": "HKFYGCLC",
+    "icon": [
+        {
+            "src": "https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "https://hkfygclc.github.io",
+    "background_color":"#e3dccc",
+    "theme_color": "#e3dccc",
+    "display": "fullscreen"
+}
