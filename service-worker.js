@@ -1,11 +1,9 @@
-await cache.put(noCorsRequest, opaqueResponse);
 const cacheName = "tdc2023PWA-v1";
 const URLS = [
     "/",
     "/index.html",
     "https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"
-];
-
+]
 const appImages = [
     "https://lla2.hkfyg.org.hk/images/20230127235200/MBTI%20icon_p1_pp1.png",
     "https://lla2.hkfyg.org.hk/images/20230127235205/MBTI%20icon_p1_pp2.png",
@@ -48,7 +46,7 @@ self.addEventListener("install", (e) => {
         if (r) {
           return r;
         }
-        const response = await fetch(e.request);
+        const response = await fetch(e.request, {mode: 'no-cors'});
         const cache = await caches.open(cacheName);
         console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
         cache.put(e.request, response.clone());
