@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>香港青年協會持續進修中心</title>
         <link rel="manifest" href="manifest.json">
+        <link rel="shortcut icon" href="https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png">
         <script src="https://kit.fontawesome.com/9b673bb193.js" crossorigin="anonymous"></script>
         <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js" defer></script>
         <style>
@@ -1188,7 +1189,16 @@
                 // }
                 // window.addEventListener("click", resetIdleTime); //reset idle time when click
                 // window.addEventListener("touchstart", resetIdleTime); //rest idle time when touch
-
+            
+            //serviceWorker
+            if ("serviceWorker" in navigator) {
+                console.log("Will service worker register?");
+                navigator.serviceWorker.register("service-worker.js").then(function(reg){
+                    console.log("Yes it did.");
+                }).catch(function(err) {
+                    console.log("No it didn't. This happened: ", err)
+                });
+            }
         </script>
     </body>
 </html>
