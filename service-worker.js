@@ -1,12 +1,14 @@
+await cache.put(noCorsRequest, opaqueResponse);
 const cacheName = "tdc2023PWA-v1";
 const URLS = [
     "/",
     "/index.html",
     "https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"
-]
+];
+
 const appImages = [
-    // "https://lla2.hkfyg.org.hk/images/20230127235200/MBTI%20icon_p1_pp1.png",
-    // "https://lla2.hkfyg.org.hk/images/20230127235205/MBTI%20icon_p1_pp2.png",
+    "https://lla2.hkfyg.org.hk/images/20230127235200/MBTI%20icon_p1_pp1.png",
+    "https://lla2.hkfyg.org.hk/images/20230127235205/MBTI%20icon_p1_pp2.png",
     "https://lla2.hkfyg.org.hk/images/20230127234826/MBTI%20icon_INTJ.png",
     "https://lla2.hkfyg.org.hk/images/20230127234836/MBTI%20icon_INTP.png",
     "https://lla2.hkfyg.org.hk/images/20230127234800/MBTI%20icon_INFJ.png",
