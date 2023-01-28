@@ -3,7 +3,7 @@ const URLS = [
     "/",
     "/index.html",
     "https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"
-]
+];
 const appImages = [
     "https://lla2.hkfyg.org.hk/images/20230127235200/MBTI%20icon_p1_pp1.png",
     "https://lla2.hkfyg.org.hk/images/20230127235205/MBTI%20icon_p1_pp2.png",
