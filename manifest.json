@@ -1,14 +1,14 @@
 {
     "short_name": "HKFYGCLC",
-    "name": "HKFYGCLC",
+    "name": "職場性向測試-HKFYGCLC",
     "icon": [
         {
             "src": "https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png",
-            "sizes": "192x192",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "start_url": "https://hkfygclc.github.io",
+    "start_url": "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/TDC.html",
     "background_color":"#e3dccc",
     "theme_color": "#e3dccc",
     "display": "fullscreen"
