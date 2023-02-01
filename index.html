@@ -2,12 +2,11 @@
 <html lang="zh-Hant">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>香港青年協會持續進修中心</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>職場性向測試－香港青年協會持續進修中心</title>
         <link rel="manifest" href="https://hkfygclc.github.io/manifest.json">
         <link rel="shortcut icon" href="https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png">
-        <script src="https://kit.fontawesome.com/9b673bb193.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js" defer></script>
+        <script src="https://hkfygclc.github.io/qrcode.min.js" defer></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Noto+Emoji&family=Noto+Sans+HK&family=Noto+Serif+TC:wght@400;900&family=IBM+Plex+Sans+JP:wght@700&display=swap');
 
@@ -91,6 +90,10 @@
                 font-family: 'IBM Plex Sans JP', sans-serif;
                 font-size: 4.5vh;
                 color: #3b5ca9;
+                font-weight: bold;
+            }
+            .special-text-2 {
+                font-family: 'IBM Plex Sans JP', sans-serif;
                 font-weight: bold;
             }
 
@@ -196,6 +199,7 @@
             }
             /* Title text */
             .result-wrap-1 {
+                font-family: 'Noto Serif TC', serif;
                 position: relative;
                 left: 50%;
                 transform: translate(-50%, 0);
@@ -206,15 +210,13 @@
                 font-size: 4vh;
                 letter-spacing: 1vw;
                 font-weight: 1000;
-                color: #ffffff;
-                text-shadow: 1px 0px 5px #000000,0px 1px 5px #000000,-1px 0px 5px #000000,0px -1px 5px #000000;
+                color: #252525;
             }
             .result-wrap-2 {
                 height: 85%;
                 width: 100%;
                 background: #ffffff;
                 border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-                border: double 7px #313131;
             }
             /* Description text */
             .result-wrap-3 {
@@ -247,6 +249,11 @@
                 margin-top: 0px;
                 padding: 0;
             }
+            #disclaimer {
+                text-align: center;
+                font-size: 1vh;
+                color: #595757;
+            }
 
             .result-wrap-image {
                 margin-bottom: 2vh;
@@ -269,7 +276,7 @@
                 position: relative;
                 top: -100%;
                 backdrop-filter: blur(50px);
-                -webkit-backdrop-filter: blur(40px);
+                -webkit-backdrop-filter: blur(50px);
                 visibility: hidden;
             }
 
@@ -285,6 +292,10 @@
                 font-size: 1.9vh;
                 box-shadow: 0 39px 68px rgb(0 0 0 / 30%), 0 35px 32px rgb(0 0 0 / 22%);
                 border-radius: 25px;
+            }
+
+            #qrtext-1 {
+                font-size: 1vh;
             }
 
             .share-wrap-qr {
@@ -337,11 +348,10 @@
             }
 
             h1.question-index {
-                font-family: Kalam;
-                font-size: 5vh;
                 position: absolute;
                 left: 50%;
                 transform: translate(-50%, 0);
+                font-size: 4.5vh;
             }
 
             .question-txt {
@@ -370,7 +380,7 @@
                 font-size: 2vh;
                 letter-spacing: 0.3vw;
                 color: #ffffff;
-                text-shadow: 1px 0px 3px #252525,0px 1px 3px #252525,-1px 0px 3px #252525,0px -1px 3px #252525;
+                text-shadow: 1px 0px 1px #252525,0px 1px 1px #252525,-1px 0px 1px #252525,0px -1px 1px #252525;
                 visibility: hidden; /* hide all answer button onload */
             }
 
@@ -415,6 +425,14 @@
                 height: 2.5vh;
                 vertical-align: text-top;
             }
+
+            #home-button:active {
+                color: #ffffff;
+            }
+            #home-button:active g {
+                fill: #ffffff;
+            }
+
 
             #share-button::after {
                 content: '下載結果';
@@ -547,13 +565,30 @@
                 animation: 1s fadein ease;
             }
 
-            .close {
+            .control-menu {
                 position: absolute;
-                right: -50px;
-                top: -50px;
-                width: 50px;
-                height: 50px;
+                right: 0px;
+                top: 0px;
+                padding-top: 1vh;
+            }
+            .redo {
                 opacity: 0.2;
+                float: left;
+                margin-right: 2vw;
+            }
+            .redo svg {
+                height: 33px;
+            }
+            .redo:hover {
+                opacity: 1;
+            }
+            .redo:active {
+                opacity: 1;
+            }
+            .close {
+                opacity: 0.2;
+                float: left;
+                padding-right: 3vw;
             }
             .close:hover {
                 opacity: 1;
@@ -563,10 +598,9 @@
             }
             .close:before, .close:after {
                 position: absolute;
-                left: 15px;
                 content: ' ';
-                height: 33px;
-                width: 2px;
+                height: 32px;
+                width: 5px;
                 background-color: #252525;
             }
             .close:before {
@@ -576,7 +610,7 @@
                 transform: rotate(-45deg);
             }
 
-            /* Special css rules for iPad portrait mode */
+            /* special css rules for iPad portrait mode */
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
                 .start-wrap-text {
                     top: 5%;
@@ -593,6 +627,9 @@
                 .result-page-button {
                     height: 75px;
                 }
+                .redo svg {
+                    height: 25px;
+                }
                 .close {
                     right: -40px;
                     top: -40px;
@@ -601,7 +638,7 @@
                     height: 25px;
                 }
             }
-            /* Special css rules for iPhone */
+            /* special css rules for iPhone */
             @media (min-width: 320px) and (max-width: 480px) {
                 .start-wrap-text {
                     top: 0%;
@@ -657,16 +694,25 @@
                     width: 156px;
                     height: 156px;
                 }
+                .redo {
+                    margin-right: 4vw;
+                }
+                .redo svg {
+                    height: 20px;
+                }                
                 .close {
-                    right: -35px;
-                    top: -30px;
+                    padding-top: 2pt;
                 }
                 .close:before, .close:after {
                     height: 20px;
+                    width: 3px;
+                }
+                #disclaimer {
+                    font-size: 0.7vh;
                 }
             }
 
-            /* Special css rules for desktop/laptop computer */
+            /* special css rules for desktop/laptop computer */
             @media (min-width: 1025px) and (max-height: 1504px) {
                 .start-wrap {
                     height: 75%;
@@ -714,7 +760,7 @@
                     --cell-size: 32px;
                 }
             }
-            /* Special css rules for macOS Safari only */
+            /* special css rules for macOS Safari only */
             @media (min-width: 1025px) and (max-height: 1504px) and (-webkit-min-device-pixel-ratio:0) {
                 #footer-img {
                     display: -webkit-flex;
@@ -722,11 +768,147 @@
                 }
             }
 
+            /* css rules for carousel slideshow */
+            .carousel-page {
+                width: 100%;
+                height: 100%;
+                display: none;
+                visibility: hidden;
+                animation: startCarousel 168s linear infinite 121s;
+            }
+            @keyframes
+            startCarousel {
+                0% {
+                    visibility: visible;
+                    
+                }
+                28% {
+                    visibility: hidden;
+                    
+                }
+            }
+            @media screen and (min-width: 720px) and (min-height: 1280px) {
+                .carousel-page {
+                    display: block;
+                }
+            }
+            .carousel-bg {
+                width: 100vw;
+                height: 100vh;
+                background: #ffffff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            .carousel {
+                list-style: none;
+                z-index: 1;
+            }
+
+            .carousel li span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: transparent;
+                backdrop-filter: blur(70px);
+                -webkit-backdrop-filter: blur(70px);
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                z-index: 2;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-animation: fadeinfadeoutAnimation 24s linear infinite;
+                animation: fadeinfadeoutAnimation 24s linear infinite;
+            }
+
+            .carousel li:nth-child(1) span {
+                background-image: url(/Images/00.jpg);            
+            }
+
+            .carousel li:nth-child(2) span {
+                background-image: url(/Images/01.jpg);
+                -webkit-animation-delay: 6s;
+                animation-delay: 6s;
+            }
+
+            .carousel li:nth-child(3) span {
+                background-image: url(/Images/02.jpg);
+                -webkit-animation-delay: 12s;
+                animation-delay: 12s;
+            }
+
+            .carousel li:nth-child(4) span {
+                background-image: url(/Images/03.jpg);
+                -webkit-animation-delay: 18s;
+                animation-delay: 18s;
+            }
+
+            @-webkit-keyframes
+            fadeinfadeoutAnimation {
+                0% {
+                    opacity: 0;
+                    -webkit-animation-timing-function: ease-in;
+                }
+                12.5% {
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                25% {
+                    opacity: 1;
+                }
+                37.5% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes
+            fadeinfadeoutAnimation {
+                0% {
+                    opacity: 0;
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                }
+                12.5% {
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                }
+                25% {
+                    opacity: 1;
+                }
+                37.5% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+
         </style>
     </head>
 
     <body>
-        <div class="background"></div>
+        <div class="background"><span style="opacity: 0.1; font-size: 1vh;">ver 1.04</span></div>
+
+        <div class="carousel-page" id="id-carousel">
+            <ul class="carousel">
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span></span></li>
+            </ul>
+            <div class="carousel-bg"></div>
+        </div>
 
         <div class="start-page" id="id-Start">
             <div class="touch-area" id="start">
@@ -818,37 +1000,37 @@
             </div>
         </div>
 
-        <div class="question-page page1 hand-draw-border" id="page1">
-            <div class="close"></div>
+        <div class="question-page page1" id="page1">
+            <div class="control-menu"><span class="close"></span></div>
             <div>
-                <h1 class="question-index">Q 1</h1>
+                <h1 class="question-index">Q<span class="special-text-2">１</span></h1>
                 <div class="question-txt" id="question1"></div>
             </div>
             <button class="answer-button answer-button-1" id="question1-ans1"></button>
             <button class="answer-button answer-button-2" id="question1-ans2"></button>
         </div>
-        <div class="question-page page2 hand-draw-border" id="page2">
-            <div class="close"></div>
+        <div class="question-page page2" id="page2">
+            <div class="control-menu"><span class="redo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></span><span class="close"></span></div>
             <div>
-                <h1 class="question-index">Q 2</h1>
+                <h1 class="question-index">Q<span class="special-text-2">２</span></h1>
                 <div class="question-txt" id="question2"></div>
             </div>
             <button class="answer-button answer-button-1" id="question2-ans1"></button>
             <button class="answer-button answer-button-2" id="question2-ans2"></button>
         </div>
-        <div class="question-page page3 hand-draw-border" id="page3">
-            <div class="close"></div>
+        <div class="question-page page3" id="page3">
+            <div class="control-menu"><span class="redo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></span><span class="close"></span></div>
             <div>
-                <h1 class="question-index">Q 3</h1>
+                <h1 class="question-index">Q<span class="special-text-2">３</span></h1>
                 <div class="question-txt" id="question3"></div>
             </div>
             <button class="answer-button answer-button-1" id="question3-ans1"></button>
             <button class="answer-button answer-button-2" id="question3-ans2"></button>
         </div>
-        <div class="question-page page4 hand-draw-border" id="page4">
-            <div class="close"></div>
+        <div class="question-page page4" id="page4">
+            <div class="control-menu"><span class="redo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></span><span class="close"></span></div>
             <div>
-                <h1 class="question-index">Q 4</h1>
+                <h1 class="question-index">Q<span class="special-text-2">４</span></h1>
                 <div class="question-txt" id="question4"></div>
             </div>
             <button class="answer-button answer-button-1" id="question4-ans1"></button>
@@ -895,6 +1077,7 @@
                         <p id="result-job"></p>
                         <h2 id="result-course-header"></h2>
                         <p id="result-course"></p>
+                        <p id="disclaimer"></p>
                     </div>
                 </div>
                 <div class="result-wrap-button">
@@ -914,33 +1097,26 @@
             <div class="share-wrap">
                 <div class="share-wrap-qr" id="qrcode"></div>
                 <div class="share-wrap-text" id="qrtext">掃瞄QR Code下載結果至手機</div>
+                <div class="share-wrap-text" id="qrtext-1">(點擊畫面返回)</div>
             </div>
         </div>
 
         <script defer>
-            //create empty string variable to store answers record
-            var result = "";
-            
-            //sound template
-            var boopSound = new Audio("https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/Boop.mp3");
-            var clickSound = new Audio("https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/clickEffect.mp3");
-            var welcomeSound = new Audio("https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/interfaceWelcome.mp3");
+            // question and answer text template
+            const Q1 = "下課／下班後你喜歡？"; // question 1
+            const Q1ans1 = "獨自回家享受自由時間"; // I
+            const Q1ans2 = "與朋友吃飯聚會"; // E
+            const Q2 = "進修學習時，你會首先了解？"; // question 2
+            const Q2ans1 = "背後理論及概念"; // S
+            const Q2ans2 = "實際用途"; // N
+            const Q3 = "做事時，你會先考慮？"; // question 3
+            const Q3ans1 = "事情的合理性"; // T
+            const Q3ans2 = " 別人的感受"; // F
+            const Q4 = "你傾向的生活方式是？"; // question 4
+            const Q4ans1 = "好好計劃未來，重視結果"; // J
+            const Q4ans2 = "順其自然，享受過程"; // P
 
-            //question and answer text template
-            const Q1 = "下課／下班後你喜歡？"; //question 1
-            const Q1ans1 = "獨自回家享受自由時間"; //I
-            const Q1ans2 = "與朋友吃飯聚會"; //E
-            const Q2 = "進修學習時，你會首先了解？"; //question 2
-            const Q2ans1 = "背後理論及概念"; //S
-            const Q2ans2 = "實際用途"; //N
-            const Q3 = "做事時，你會先考慮？"; //question 3
-            const Q3ans1 = "事情的合理性"; //T
-            const Q3ans2 = " 別人的感受"; //F
-            const Q4 = "你傾向的生活方式是？"; //question 4
-            const Q4ans1 = "好好計劃未來，重視結果"; //J
-            const Q4ans2 = "順其自然，享受過程"; //P
-
-            //result text template array
+            // result text template array
             // [
             //     Title,
             //     Description,
@@ -1093,7 +1269,13 @@
                 "https://lla2.hkfyg.org.hk/images/20230127234246/MBTI%20icon_ESFP.png"
             ];
 
-            //onClick event listener
+            // create empty string variable to store answers record
+            var result = "";
+            
+            // sound template
+            var boopSound = new Audio("https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/Boop.mp3");
+
+            // onClick event listener
             const startButton = document.getElementById("start");
             const button1_1 = document.getElementById("question1-ans1");
             const button1_2 = document.getElementById("question1-ans2");
@@ -1106,10 +1288,12 @@
             const button_home = document.getElementById("home-button");
             const button_share = document.getElementById("share-button");
             const share_page = document.getElementById("id-share");
+            const redo_buttons = document.querySelectorAll(".redo");
             const close_buttons = document.querySelectorAll(".close");
+            const closeCarousel = document.getElementById("id-carousel");
 
             startButton.addEventListener("click", () => {
-                playSound(clickSound);
+                playSound(boopSound);
                 mainFunction(event);
             });
             button1_1.addEventListener("click", () => {
@@ -1145,20 +1329,45 @@
                 mainFunction(event);
             });
             button_home.addEventListener("click", () => {
-                backToHome();
+                playSound(boopSound);
+                setTimeout(backToHome, 300);
             });
-            button_share.addEventListener("click", function() {displayShare();});
-            share_page.addEventListener("click", function() {hideShare();});
+            button_share.addEventListener("click", () => {
+                playSound(boopSound);
+                displayShare();
+                autoDismissQRCode();
+            });
+            share_page.addEventListener("click", () => {
+                playSound(boopSound);
+                hideShare();
+                resetDismissQRCode();
+            });
+            redo_buttons.forEach((redo_button) => {
+                redo_button.addEventListener("click", () => {
+                    playSound(boopSound);
+                    document.getElementById("page1").classList.remove("fade-in");
+                    setTimeout(displayQ1, 0);
+                });
+            });
             close_buttons.forEach((close_button) => {
-                close_button.addEventListener("click", function() {backToHome();});
+                close_button.addEventListener("click", () => {
+                    playSound(boopSound);
+                    backToHome();
+                });
             });
+            closeCarousel.addEventListener("click", () => {
+                playSound(boopSound);
+                backToHome();
+            })
+
                       
-            //generate MBTI result from answer choices
+            // generate and store MBTI result from answer choices
             function mainFunction(event) {
                 switch (event.target.getAttribute("id")) {
                     case "start" :
                         result = "";
                         displayQ1();
+                        document.getElementById("id-carousel").style.display = "none";
                         break;
                     case "question1-ans1" :
                         result += "I";
@@ -1195,12 +1404,33 @@
                 }
             }
             
-            //page transition from start to page 1
+            // page transition from start to page 1
             function displayQ1() {
-                document.getElementById("id-Start").style.visibility = "hidden"; //hide start page
+                document.getElementById("id-Start").style.visibility = "hidden"; // hide start page
+
+                // code segment for redo button purpose only
+                //
+                // clear result value
+                result = "";
+                // reset all pages question text
+                document.getElementById("question1").innerHTML = "";
+                document.getElementById("question2").innerHTML = "";
+                document.getElementById("question3").innerHTML = "";
+                document.getElementById("question4").innerHTML = "";
+                // reset q2 to q4 page visibility
+                document.getElementById("page2").style.visibility = "hidden";
+                document.getElementById("page3").style.visibility = "hidden";
+                document.getElementById("page4").style.visibility = "hidden";
+                // reset q2 to q4 fadein animation
+                document.getElementById("page2").classList.remove("fade-in");
+                document.getElementById("page3").classList.remove("fade-in");
+                document.getElementById("page4").classList.remove("fade-in");
+                //
+                // end of code segment for redo button
+
                 document.getElementById("page1").classList.add("fade-in");
-                document.getElementById("page1").style.visibility = "visible"; //display page 1
-                //code to display question in typing effect
+                document.getElementById("page1").style.visibility = "visible"; // display page 1
+                // code to display question in typing effect
                 var i = 0;
                 function q1typingEffect() {
                     if (i < Q1.length) {
@@ -1210,17 +1440,17 @@
                     }
                 }
                 q1typingEffect();
-                button1_1.innerHTML = Q1ans1; //set button text
-                button1_2.innerHTML = Q1ans2; //set button text
-                setTimeout(function() {displayAnsButton(button1_1);}, (Q1.length*50)+300); //display button after question finish loading
-                setTimeout(function() {displayAnsButton(button1_2);}, (Q1.length*50)+300); //display button after question finish loading
+                button1_1.innerHTML = Q1ans1; // generate button text
+                button1_2.innerHTML = Q1ans2; // generate button text
+                setTimeout(function() {displayAnsButton(button1_1);}, (Q1.length*50)+300); // display button after question finish loading
+                setTimeout(function() {displayAnsButton(button1_2);}, (Q1.length*50)+300); // display button after question finish loading
             }
 
-            //page transition from start to page 2
+            // page transition from start to page 2
             function displayQ2() {
-                document.getElementById("page1").style.visibility = "hidden"; //hide page 1
+                document.getElementById("page1").style.visibility = "hidden"; // hide page 1
                 document.getElementById("page2").classList.add("fade-in");
-                document.getElementById("page2").style.visibility = "visible"; //display page 2
+                document.getElementById("page2").style.visibility = "visible"; // display page 2
                 var i = 0;
                 function q2typingEffect() {
                     if (i < Q2.length) {
@@ -1236,11 +1466,11 @@
                 setTimeout(function() {displayAnsButton(button2_2);}, (Q2.length*50)+300);
             }
 
-            //page transition from start to page 3
+            // page transition from start to page 3
             function displayQ3() {
-                document.getElementById("page2").style.visibility = "hidden"; //hide page 2
+                document.getElementById("page2").style.visibility = "hidden"; // hide page 2
                 document.getElementById("page3").classList.add("fade-in");
-                document.getElementById("page3").style.visibility = "visible"; //display page 3
+                document.getElementById("page3").style.visibility = "visible"; // display page 3
                 var i = 0;
                 function q3typingEffect() {
                     if (i < Q3.length) {
@@ -1256,11 +1486,11 @@
                 setTimeout(function() {displayAnsButton(button3_2);}, (Q3.length*50)+300);
             }
             
-            //page transition from start to page 4
+            // page transition from start to page 4
             function displayQ4() {
-                document.getElementById("page3").style.visibility = "hidden"; //hide page 3
+                document.getElementById("page3").style.visibility = "hidden"; // hide page 3
                 document.getElementById("page4").classList.add("fade-in");
-                document.getElementById("page4").style.visibility = "inherit"; //display page 4
+                document.getElementById("page4").style.visibility = "inherit"; // display page 4
                 var i = 0;
                 function q4typingEffect() {
                     if (i < Q4.length) {
@@ -1276,19 +1506,18 @@
                 setTimeout(function() {displayAnsButton(button4_2);}, (Q4.length*50)+300);
             }            
             
-            //page transition to result page
+            // page transition to result page
             function displayResult() {
                 document.getElementById("page4").classList.add("fade-out");
-                setTimeout(function() {document.getElementById("page4").style.visibility = "hidden";},800); //hide page 4
+                setTimeout(function() {document.getElementById("page4").style.visibility = "hidden";},800); // hide page 4
                 document.getElementById("loading").classList.add("fade-in");
-                setTimeout(function() {document.getElementById("loading").style.visibility = "inherit";},900); //display loading page
-                setTimeout(function() {document.getElementById("loading").style.visibility = "hidden";},3000); //hide loading page
-                setTimeout(function() {document.getElementById("id-result").classList.add("fade-in");},3100); //add fade in effect to result page
-                // setTimeout(function() {playSound(welcomeSound);},3100);
-                setTimeout(function() {document.getElementById("id-result").style.visibility = "inherit";},3100); //display result page
+                setTimeout(function() {document.getElementById("loading").style.visibility = "inherit";},900); // display loading page
+                setTimeout(function() {document.getElementById("loading").style.visibility = "hidden";},3000); // hide loading page
+                setTimeout(function() {document.getElementById("id-result").classList.add("fade-in");},3100); // add fade in effect to result page
+                setTimeout(function() {document.getElementById("id-result").style.visibility = "inherit";},3100); // display result page
                 generateReusltContent(window[result]);
 
-                //create content for result page
+                // create content for result page
                 function generateReusltContent(type) {
                     document.getElementById("result-heading").innerHTML = type[0];
                     document.getElementById("result-description").innerHTML = type[1];
@@ -1306,75 +1535,47 @@
                         return ulList;
                     }
                     document.getElementById("result-course").appendChild(createUnOrderList(type[3]));
-                    document.getElementById("qrcode").innerHTML = "";
-                    generateQRcode(type[4]);
+                    document.getElementById("disclaimer").innerHTML = "(此為簡易版「 MBTI 16型人格測試」，測試結果僅供參考。)";
                     document.getElementById("type-img").src = type[5];
-                    //change background and text color according to type
+                    // change background and text color according to type
                     switch (type) {
                         case INTJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#a0b1a9";
-                            document.getElementById("result-description").style.color = "#034941";
-                            break;
                         case INTP :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#a0b1a9";
-                            document.getElementById("result-description").style.color = "#034941";
-                            break;
                         case INFJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#a0b1a9";
-                            document.getElementById("result-description").style.color = "#034941";
-                            break;
                         case INFP :
                             document.getElementsByClassName("result-page-background")[0].style.background = "#a0b1a9";
                             document.getElementById("result-description").style.color = "#034941";
                             break;
+
                         case ISTJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f8d078";
-                            document.getElementById("result-description").style.color = "#e8952b";
-                            break;
                         case ISFJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f8d078";
-                            document.getElementById("result-description").style.color = "#e8952b";
-                            break;
                         case ISTP :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f8d078";
-                            document.getElementById("result-description").style.color = "#e8952b";
-                            break;
                         case ISFP :
                             document.getElementsByClassName("result-page-background")[0].style.background = "#f8d078";
                             document.getElementById("result-description").style.color = "#e8952b";
                             break;
+                            
                         case ENTJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#adc8dd";
-                            document.getElementById("result-description").style.color = "#3e5ba7";
-                            break;
                         case ENTP :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#adc8dd";
-                            document.getElementById("result-description").style.color = "#3e5ba7";
-                            break;
                         case ENFJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#adc8dd";
-                            document.getElementById("result-description").style.color = "#3e5ba7";
-                            break;
                         case ENFP :
                             document.getElementsByClassName("result-page-background")[0].style.background = "#adc8dd";
                             document.getElementById("result-description").style.color = "#3e5ba7";
                             break;
+                        
                         case ESTJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f7c6dc";
-                            document.getElementById("result-description").style.color = "#c1392b";
-                            break;
                         case ESFJ :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f7c6dc";
-                            document.getElementById("result-description").style.color = "#c1392b";
-                            break;
                         case ESTP :
-                            document.getElementsByClassName("result-page-background")[0].style.background = "#f7c6dc";
-                            document.getElementById("result-description").style.color = "#c1392b";
-                            break;
                         case ESFP :
                             document.getElementsByClassName("result-page-background")[0].style.background = "#f7c6dc";
                             document.getElementById("result-description").style.color = "#c1392b";
                             break;
+                    }
+                    document.getElementById("qrcode").innerHTML = "";
+                    try {
+                        generateQRcode(type[4]);
+                    } catch(e) {
+                        console.log("QR code generation error.")
                     }
                 }             
             }
@@ -1400,7 +1601,7 @@
                 sound.play();
             }
 
-            //QR code generator
+            // QR code generator
             function generateQRcode(QRString) {
                 new QRCode(document.getElementById("qrcode"), {
                     text: QRString,
@@ -1410,20 +1611,32 @@
                     // colorLight : "#ffffff",
                     // correctLevel : QRCode.CorrectLevel.H
                 });
+            }                
+            
+            // return to start page when idle             
+            var reloadOnIdle = function() {
+                if (document.getElementById("id-Start").style.visibility == "hidden") {
+                    setTimeout(backToHome, 3*60000); // 1000=1sec; 60000=1min
+                }
             }
-
-            // Go back to start page when idle             
-            var reloadOnIdle = function() {if (document.getElementById("id-Start").style.visibility == "hidden") {
-                setTimeout(backToHome,5*60000); //1000=1sec; 60000=1min
-            }}
             
             function resetIdleTime() {
                 clearTimeout(reloadOnIdle);
-                reloadOnIdle = setTimeout(backToHome,5*60000); //1000=1sec; 60000=1min
+                reloadOnIdle = setTimeout(backToHome, 3*60000); // 1000=1sec; 60000=1min
             }
-            window.addEventListener("click", resetIdleTime); //reset idle time when click
-            window.addEventListener("touchstart", resetIdleTime); //rest idle time when touch
-                
+            window.addEventListener("click", resetIdleTime); // reset idle time when click
+            window.addEventListener("touchstart", resetIdleTime); // reset idle time when touch
+
+            // auto dismiss QR Code when idle
+            var toggleQRCode;
+            function autoDismissQRCode() {
+                toggleQRCode = setTimeout(hideShare, 20000);
+            }
+            // reset QR code display time when manually close QR Code
+            function resetDismissQRCode() {
+                clearTimeout(toggleQRCode);
+            }
+
         </script>
     </body>
 </html>
