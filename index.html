@@ -305,7 +305,7 @@
             .loading-page {
                 width: 100%;
                 height: 100%;
-                background: #ffffff;
+                background: #fffcf5;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -364,6 +364,7 @@
                 font-weight: bold;
                 text-align: center;
                 letter-spacing: 0.5vw;
+                white-space: pre-wrap;
             }
             
             .touch-area {
@@ -374,8 +375,8 @@
 
             .answer-button {
                 border-style: none;
-                border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
-                min-width: 55%;
+                border-radius: 5% 5% 5% 5% / 50% 50% 50% 50%;
+                min-width: 82%;
                 min-height: 5vh;
                 font-size: 2vh;
                 letter-spacing: 0.3vw;
@@ -743,7 +744,7 @@
                     content: '點擊畫面開始';
                 }
                 .answer-button {
-                    min-width: 25%;
+                    min-width: 30%;
                 }
                 #type-img {
                     width: 15%;
@@ -898,7 +899,7 @@
     </head>
 
     <body>
-        <div class="background"><span style="opacity: 0.1; font-size: 1vh;">ver 1.1</span></div>
+        <div class="background"><span style="opacity: 0.1; font-size: 1vh;">ver 1.04</span></div>
 
         <div class="carousel-page" id="id-carousel">
             <ul class="carousel">
@@ -919,7 +920,7 @@
                             你知道自己適合甚麼職業嗎？
                         </p>
                         <p class="start-page-text-2"><span class="special-text-1">１</span>分鐘 MBTI 16型人格職業性向測試</p>
-                        <p class="start-page-text-2"><span class="special-text-1">４</span>個簡單問題</p>
+                        <p class="start-page-text-2"><span class="special-text-1">４</span>條簡單問題</p>
                         <p class="start-page-text-3"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 0 50.000000 57.000000" preserveAspectRatio="xMidYMid meet">
 
                             <g transform="translate(0.000000,57.000000) scale(0.100000,-0.100000)"
@@ -994,8 +995,8 @@
                            <p class="start-page-text-4"></p>
                     </div>
                 </div>
-                <img src="/Images/MBTI%20icon_p1_pp1.png" id="header-img">
-                <img src="/Images/MBTI%20icon_p1_pp2.png" id="footer-img">
+                <img src="https://lla2.hkfyg.org.hk/images/20230127235200/MBTI%20icon_p1_pp1.png" id="header-img">
+                <img src="https://lla2.hkfyg.org.hk/images/20230127235205/MBTI%20icon_p1_pp2.png" id="footer-img">
                 
             </div>
         </div>
@@ -1102,19 +1103,33 @@
         </div>
 
         <script defer>
-            // question and answer text template
-            const Q1 = "下課／下班後你喜歡？"; // question 1
-            const Q1ans1 = "獨自回家享受自由時間"; // I
-            const Q1ans2 = "與朋友吃飯聚會"; // E
-            const Q2 = "進修學習時，你會首先了解？"; // question 2
-            const Q2ans1 = "背後理論及概念"; // S
-            const Q2ans2 = "實際用途"; // N
-            const Q3 = "做事時，你會先考慮？"; // question 3
-            const Q3ans1 = "事情的合理性"; // T
-            const Q3ans2 = " 別人的感受"; // F
-            const Q4 = "你傾向的生活方式是？"; // question 4
-            const Q4ans1 = "好好計劃未來，重視結果"; // J
-            const Q4ans2 = "順其自然，享受過程"; // P
+            // questions and answers text template array
+            QnA_textTemplate = [
+                [
+                    ["下課/下班後你喜歡？","獨自回家享受自由時間","與朋友吃飯聚會"],
+                    ["進修學習時，你會先了解？","實際用途","背後理論及概念"],
+                    ["做事時，你會先考慮？","事情的合理性","別人的感受"],
+                    ["你傾向的生活方式是？","好好計劃未來，重視結果","順其自然，享受過程"]
+                ],
+                [
+                    ["在朋友的生日派對中，\n你會傾向？","與熟識的朋友對話","嘗試認識新朋友"],
+                    ["在空閒時，你可能會思考？","下一次旅行的地點","下一次旅行的意義"],
+                    ["如果朋友找你傾訴時\n突然哭泣，你會？","了解原因並嘗試提供解決方法","不深究原因並著重當下的陪伴"],
+                    ["面對時間緊迫的\n工作時，你會?","因時間緊迫而感到壓力","因最後關頭而得到動力"]
+                ],
+                [
+                    ["去旅行時，你傾向的旅伴是？","關係最好的知己","一大班朋友，部分可能不太熟絡"],
+                    ["當你購買新衣服時，\n你會傾向？","必須試身，感覺合適才購買","不必試身，憑直覺購買合適的衣服"],
+                    ["當你面對爭執的時候，\n你會選擇？","著重是非對錯，堅持自身立場","著重對方感受，盡量避免衝突"],
+                    ["疲憊的你回家做家務時，\n你會傾向？","先完成所有家務後再放鬆","先休息一下再慢慢做家務"]
+                ],
+                [
+                    ["你較喜歡以下\n哪一種工作模式？","獨自工作","團隊工作"],
+                    ["當你生日時，\n你傾向收到的禮物是？","可於日常生活中經常使用的禮物","沒有實際作用但別具意義的禮物"],
+                    ["因隊友的失誤而落敗，\n你會選擇？","清晰指出隊友的失誤並期望下次改善","避免隊友感到難堪而不會追究責任"],
+                    ["去旅行前，你會傾向？","仔細規劃行程，並按計畫進行","不作過多規劃，按心情決定行程"]
+                ]
+            ];
 
             // result text template array
             // [
@@ -1129,27 +1144,27 @@
                 "INTJ 策劃者",
                 "對知識充滿渴望，學習能力高，想像力豐富、擅於設計和執行計劃，所以做事目標明確且有洞察力及遠見。",
                 "學術研究、作家、建築師、數據分析、工程、科學、金融投資、財務策劃師、程式編寫員",
-                ["樓宇檢驗助理培訓證書","Python編程及數據分析入門課程","UI/UX用戶體驗設計證書課程","STEM教學實踐培訓課程","樂齡科技助理證書課程"],
+                ["樓宇檢驗助理培訓證書","Python編程及數據分析入門課程","數碼營銷與人工智能應用課程","UI/UX用戶體驗設計證書課程","STEM教學實踐培訓課程","無人機操作(航拍)培訓證書課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=INTJ",
-                "/Images/MBTI%20icon_INTJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234826/MBTI%20icon_INTJ.png"
             ];
             
             INTP = [
                 "INTP 學者型",
                 "具備靈活的邏輯思維，創造力及分析力高，喜愛追求理論與科學實證，擅於自行尋找解决方法。",
                 "科學、工程、研究人員、數據分析、網絡開發人員、物理治療、言語治療、職業治療、藥劑師",
-                ["樓宇檢驗助理培訓證書","物理治療助理證書","STEM教學實踐培訓課程","Python編程及數據分析入門課程","藥物使用及配藥基礎課程","視光師助理證書課程"],
+                ["樓宇檢驗助理培訓證書","物理治療助理證書","STEM教學實踐培訓課程","聽覺科學檢查及復康證書課程","藥物使用及配藥基礎課程","視光科學及眼科護理基礎課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=INTP",
-                "/Images/MBTI%20icon_INTP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234836/MBTI%20icon_INTP.png"
             ];
             
             INFJ = [
                 "INFJ 提倡者",
                 "安靜的外向類型，很容易與他人建立良好的聯繫，經常以他人利益著想，喜愛幫助他人。行事風格有創造力及想像力，並會腳踏實地完成目標。",
                 "心理輔導、社會服務、教育工作、護理業、物理治療、職業治療、營養師、健康顧問、服務業",
-                ["幼兒Playgroup導師培訓證書","支援特殊學習需要學生(SEN)證書課程","綜合護理員培訓課程","樂齡科技助理證書課程","營養顧問助理證書課程","專業獸醫助理培訓課程"],
+                ["幼兒Playgroup導師培訓證書","支援特殊教育需要兒童培訓證書","物理治療助理證書","兒科職業治療助理證書課程","營養顧問助理證書課程","專業獸醫助理培訓課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=INFJ",
-                "/Images/MBTI%20icon_INFJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234800/MBTI%20icon_INFJ.png"
             ];
             
             INFP = [
@@ -1158,7 +1173,7 @@
                 "心理輔導、調解員、社會服務、教育工作、表演藝術、作家、翻譯員、設計師、攝影師",
                 ["專業調解員培訓證書","花藝師培訓證書","音樂導師培訓證書","正向心理學導師培訓課程","小學學生輔導證書課程","表達藝術治療入門"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=INFP",
-                "/Images/MBTI%20icon_INFP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234815/MBTI%20icon_INFP.png"
             ];
             
             ISTJ = [
@@ -1167,97 +1182,97 @@
                 "公務員、紀律部隊、律政人員、會計師、審計及財務管理、工程、數據分析",
                 ["專業調解員培訓證書","樓宇檢驗助理培訓證書","殯儀策劃師培訓課程","無人機操作(航拍)培訓證書課程","Python編程及數據分析入門課程","香港政府公務員綜合招聘考試(CRE)備試班"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ISTJ",
-                "/Images/MBTI%20icon_ISTJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127235006/MBTI%20icon_ISTJ.png"
             ];
             
             ISFJ = [
                 "ISFJ 守護者",
                 "具備良好社交技巧，關心別人的感受，願意為他人奉獻，重視團隊協作。追求安全和穩定，做事可靠且追求完美。",
                 "社會服務、教育工作、物理治療、言語治療、職業治療、客戶服務、寵物護理",
-                ["幼兒Playgroup導師培訓證書","兒童遊戲治療證書課程","言語訓練及治療技巧基礎課程","物理治療助理證書","牙醫助護證書課程","寵物託管服務證書課程"],
+                ["幼兒Playgroup導師培訓證書","兒童遊戲治療證書課程","支援兒童言語及語言障礙培訓證書","物理治療助理證書","牙醫助護證書課程","寵物託管服務證書課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ISFJ",
-                "/Images/MBTI%20icon_ISFJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234953/MBTI%20icon_ISFJ.png"
             ];
             
             ISTP = [
                 "ISTP 邏輯者",
                 "性格冷靜，安靜內向，但同時具備好奇心，善於觀察並分析問題核心、掌握及找出解決方式。",
                 "機械師、工程師、平面設計師、財務策劃師、程式開發員、系統分析師、法醫、科學研究、紀律部隊、護理人員、偵探、飛行員",
-                ["樓宇檢驗助理培訓證書","專業調解員培訓證書","醫務所助理證書","私家偵探(基礎)證書課程","Python編程及數據分析入門課程"],
+                ["樓宇檢驗助理培訓證書","專業調解員培訓證書","醫務所助理證書","私家偵探(基礎)證書課程","Python編程及數據分析入門課程","數碼營銷與人工智能應用課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ISTP",
-                "/Images/MBTI%20icon_ISTP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127235011/MBTI%20icon_ISTP.png"
             ];
             
             ISFP = [
                 "ISFP 探險家",
                 "有獨特的審美眼光，通常精於設計及創作，能夠以創新方式表達想法。工作上追求自由靈活，敢於嘗試新事物。",
                 "花藝師、藝術家、攝影師、表演者、設計及創作、化妝師、園景師、建築師、獸醫",
-                ["花藝師培訓證書","日本AUBE保鮮花專業培訓課程","音樂導師證書","手工藝術導師培訓課程","初級珠寶設計師證書課程","初級寵物美容師證書課程"],
+                ["花藝師培訓證書","日本AUBE保鮮花專業培訓課程","音樂導師證書","手工藝術導師培訓課程","珠寶設計基礎課程","初級寵物美容師證書課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ISFP",
-                "/Images/MBTI%20icon_ISFP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234959/MBTI%20icon_ISFP.png"
             ];
             
             ENTJ = [
                 "ENTJ 指揮官",
                 "天生的領導者，熱愛挑戰，能理性地處理問題。具備堅定的決心及動力，高感染力能帶領團隊一起為目標努力。",
                 "律師、企業家、大學教授、行政人員、會計、政策及行政、投資及風險管理、建築師、測量師、技術研究",
-                ["樓宇檢驗助理培訓證書","專業調解員培訓證書","數碼營銷推廣策略證書課程","人力資源管理基礎證書課程","十六型人格(MBTI)與生涯規劃指導證書課程","幼兒Playgroup及教育中心創業課程"],
+                ["樓宇檢驗助理培訓證書","專業調解員培訓證書","數碼營銷與人工智能應用課程","人力資源管理基礎證書課程","十六型人格(MBTI)與生涯規劃指導證書課程","幼兒Playgroup及教育中心創業課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ENTJ",
-                "/Images/MBTI%20icon_ENTJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127233729/MBTI%20icon_ENTJ.png"
             ];
             
             ENTP = [
                 "ENTP 辯論家",
                 "思考獨立敏銳，敢於突破常規，提出不同意見。喜歡分析及辯論，亦能容易理解他人的想法。",
                 "調解員、心理學家、市場營銷、表演、攝影、記者、廣告業、創意指導、演員、主持、影視製作",
-                ["專業調解員培訓證書","音樂導師培訓證書","正向心理學導師培訓課程","表達藝術治療入門","數碼營銷推廣策略證書課程","城市風景攝影入門"],
+                ["專業調解員培訓證書","音樂導師培訓證書","正向心理學導師培訓課程","表達藝術治療入門","數碼營銷與人工智能應用課程","勞工法例基礎證書課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ENTP",
-                "/Images/MBTI%20icon_ENTP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127233735/MBTI%20icon_ENTP.png"
             ];
             
             ENFJ = [
                 "ENFJ 教育家",
                 "洞察力佳，具同理心，喜愛與人共事工作，擅長帶領團隊，並會為身邊的人帶來正面影響，並從中獲取成就感。",
                 "社會服務、教育工作、輔導、教練、記者、編輯、廣告、導演、客戶服務",
-                ["幼兒Playgroup導師培訓證書","支援特殊學習需要學生(SEN)證書課程","幼兒Messy Play導師培訓課程","正向心理學導師培訓課程","情緒輔導基礎課程","數碼營銷推廣策略證書課程"],
+                ["幼兒Playgroup導師培訓證書","支援特殊教育需要兒童培訓證書","幼兒Messy Play導師培訓課程","正向心理學導師培訓課程","朋輩輔導技巧基礎課程","數碼營銷與人工智能應用課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ENFJ",
-                "/Images/MBTI%20icon_ENFJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127233714/MBTI%20icon_ENFJ.png"
             ];
             
             ENFP = [
                 "ENFP 競選者",
                 "熱情外向，富好奇心及創意，渴求創造和自由，具備良好社交能力，做事傾向臨場發揮，亦渴望能得到他人肯定和支持。",
                 "編輯、作家、記者、演藝界、設計師、表演及藝術、媒體創作、人力資源、客戶服務",
-                ["花藝師培訓證書","音樂導師培訓證書","初級珠寶設計師證書課程","手工藝術導師培訓課程","日本和諧粉彩正指導師培訓課程","西洋書法軟筆入門班"],
+                ["花藝師培訓證書","音樂導師培訓證書","珠寶設計基礎課程","手工藝術導師培訓課程","日本和諧粉彩正指導師培訓課程","西洋書法軟筆入門班"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ENFP",
-                "/Images/MBTI%20icon_ENFP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127233721/MBTI%20icon_ENFP.png"
             ];
             
             ESTJ = [
                 "ESTJ 領導者",
                 "踏實的領導者，擅長組織及策劃活動，懂得應變具挑戰性的工作，能為團隊給予明確建議及指導。",
                 "行政管理、政策及行政、銀行及金融、紀律部隊、物業管理、工程師、藥劑師",
-                ["樓宇檢驗助理培訓證書","人力資源管理基礎證書課程","知識管理(Knowledge Management)證書課程","殯儀策劃師培訓課程","犬隻行為及訓練證書課程"],
+                ["樓宇檢驗助理培訓證書","人力資源管理基礎證書課程","知識管理證書課程","殯儀策劃師培訓課程","犬隻行為及訓練證書課程","勞工法例基礎證書課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ESTJ",
-                "/Images/MBTI%20icon_ESTJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234253/MBTI%20icon_ESTJ.png"
             ];
             
             ESFJ = [
                 "ESFJ 奉獻者",
                 "性格熱情而富有愛心，樂於幫助別人，是團隊中忠誠且愛付出的人。做事有周全的計劃且具備強烈的責任感。",
                 "醫療及復康、社會服務、教育工作、幼兒教育、銷售員、寵物護理",
-                ["幼兒Playgroup導師培訓證書","支援特殊學習需要學生(SEN)證書課程","兒童視覺藝術導師證書課程","醫務所助理證書","嬰幼兒按摩師培訓課程","專業獸醫助理培訓課程"],
+                ["幼兒Playgroup導師培訓證書","支援特殊教育需要兒童培訓證書","兒童視覺藝術導師證書課程","醫務所助理證書","嬰幼兒按摩師培訓課程","專業獸醫助理培訓課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ESFJ",
-                "/Images/MBTI%20icon_ESFJ.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234239/MBTI%20icon_ESFJ.png"
             ];
             
             ESTP = [
                 "ESTP 挑戰者",
                 "性格理性果斷，說做就做，擅長以實際行動解決困難，長處是執行性工作，能為不同人解決困擾。",
                 "醫護人員、記者、體育、市場營銷、自由工作者、企業家",
-                ["專業調解員培訓證書","言語訓練及治療技巧基礎課程","殯儀策劃師培訓課程","視光師助理證書課程","數碼營銷推廣策略證書課程"],
+                ["專業調解員培訓證書","支援兒童言語及語言障礙培訓證書","殯儀策劃師培訓課程","數碼營銷與人工智能應用課程","視光科學及眼科護理基礎課程","婚姻及家庭事務法律入門"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ESTP",
-                "/Images/MBTI%20icon_ESTP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234302/MBTI%20icon_ESTP.png"
             ];
             
             ESFP = [
@@ -1266,14 +1281,31 @@
                 "教育工作、社會服務、心理輔導、表演者、設計師、活動策劃、顧問、導遊、教練",
                 ["幼兒Playgroup導師培訓證書","美術教師文憑課程","音樂導師證書","日本和諧粉彩正指導師培訓課程","兒童戲劇導師培訓課程","兒童體適能教練培訓課程"],
                 "https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/download_result.html?type=ESFP",
-                "/Images/MBTI%20icon_ESFP.png"
+                "https://lla2.hkfyg.org.hk/images/20230127234246/MBTI%20icon_ESFP.png"
             ];
+
+            //create a random number between 0 to 3
+            var ranNum = Math.floor(Math.random()*4);
+
+            // create string for questions pages text content using the random value of ranNum
+            var Q1 = QnA_textTemplate[ranNum][0][0]; // question 1
+            var Q1ans1 = QnA_textTemplate[ranNum][0][1]; // I
+            var Q1ans2 = QnA_textTemplate[ranNum][0][2]; // E
+            var Q2 = QnA_textTemplate[ranNum][1][0]; // question 2
+            var Q2ans1 = QnA_textTemplate[ranNum][1][1]; // S
+            var Q2ans2 = QnA_textTemplate[ranNum][1][2]; // N
+            var Q3 = QnA_textTemplate[ranNum][2][0]; // question 3
+            var Q3ans1 = QnA_textTemplate[ranNum][2][1]; // T
+            var Q3ans2 = QnA_textTemplate[ranNum][2][2]; // F
+            var Q4 = QnA_textTemplate[ranNum][3][0]; // question 4
+            var Q4ans1 = QnA_textTemplate[ranNum][3][1]; // J
+            var Q4ans2 = QnA_textTemplate[ranNum][3][2]; // P
 
             // create empty string variable to store answers record
             var result = "";
             
             // sound template
-            var boopSound = new Audio("https://hkfygclc.github.io/Boop.mp3");
+            var boopSound = new Audio("https://clc.hkfyg.org.hk/wp-content/uploads/sites/34/2023/01/Boop.mp3");
 
             // onClick event listener
             const startButton = document.getElementById("start");
@@ -1635,14 +1667,6 @@
             // reset QR code display time when manually close QR Code
             function resetDismissQRCode() {
                 clearTimeout(toggleQRCode);
-            }
-
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("service-worker.js").then(function(reg){
-                    console.log("Service worker registered.");
-                }).catch(function(err) {
-                    console.log("Service worker rehistration failed. ", err)
-                });
             }
 
         </script>
