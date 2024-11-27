@@ -557,7 +557,7 @@
 </head>
 <body>
     <div id="background">
-        <span style="opacity: 0.1; font-size: 1vh;">ver 1.1</span>
+        <span style="opacity: 0.1; font-size: 1vh;">ver 1.2</span>
     </div>
     <!--<div class="carousel-page" id="id-carousel">
         <ul class="carousel">
@@ -2283,10 +2283,10 @@
             location.reload(false);
         }
         
-        closeCarousel.addEventListener("click", () => {
-                playSound(boopSound);
-                backToHome();
-        });
+        //closeCarousel.addEventListener("click", () => {
+        //       playSound(boopSound);
+        //       backToHome();
+        //});
         
         if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("service-worker.js").then(function(reg){
