@@ -1,0 +1,15 @@
+{
+    "short_name": "2024徐悲鴻盃國際青少年兒童美術比賽",
+    "name": "2024徐悲鴻盃國際青少年兒童美術比賽",
+    "icon": [
+        {
+            "src": "https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "https://hkfygclc.github.io/",
+    "background_color":"#e8e8e8",
+    "theme_color": "#e8e8e8",
+    "display": "fullscreen"
+}
