@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="https://hkfygclc.github.io/manifest.json">
+    <title>2024《徐悲鴻盃國際青少年兒童美術比賽》</title>
+    <link rel="shortcut icon" href="https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png">
+    <style>    
+        body {
+            background-color: #ffffff;
+            color:#252525;
+            width: 100vw;
+            height: 1920px;
+            margin: 0;
+            user-select: none; /*disable text selection on Google Chrome*/
+            -webkit-user-select: none; /*disable text selection on macOS device*/
+            -webkit-touch-callout: none; /*disable text selection on iOS device*/
+            overflow: hidden;
+            }
+        div#background {
+            width: 100%;
+            height: 1920px;
+            background-image: url("./image/Paper.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        div#index_menu {
+            width: 90%;
+            height: 90%;
+            background: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: inline;
+            visibility: visible;
+        }
+        div#index_button {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        div.sub_menu {
+            width: 85%;
+            height: 85%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        div.student_menu {
+            width: 85%;
+            height: 85%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #chi_menu,
+        #west_menu,
+        #name_menu,
+        #group1,
+        #group2,
+        #group3,
+        #group4,
+        #group5,
+        #group6,
+        #group7,
+        #group8,
+        #group9,
+        #group10,
+        #group11,
+        #group12,
+        #group13,
+        #school_menu {
+            visibility: hidden;
+        }
+        div#chi_menu_button {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        div#west_menu_button {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        div#name_menu_button {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        div.student_menu_button {
+            width: 100%;
+            height: 75%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            overflow: scroll;
+        }
+        div.student_list {
+            width: 100%;
+            height: 200px;
+        }
+        div.student_menu_home_button {
+            position: relative;
+            top: 75%;
+        }
+        button.school_btn_1 {
+            width: 90%;
+        }
+        button.school_btn_2 {
+            width: 85%;
+        }
+        button.school_btn_3 {
+            width: 80%;
+        }
+        div#artwork_page {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            position: relative;
+            top: -100%;
+            transform: translate(0, -100%);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            visibility: hidden;            
+        }
+        div#artwork_wrap {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1058px;
+            height: 1881px;
+            text-align: center;            
+        }
+        div#school_artwork_page {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            position: relative;
+            top: -100%;
+            transform: translate(0, -100%);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            visibility: hidden;            
+        }
+        div#school_artwork_wrap {
+            position: relative;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1058px;
+            height: 1881px;
+            text-align: center;            
+        }
+        button.png_btn {
+            background: none;
+            border-style: none;
+        }
+        @media (orientation: portrait) {
+            button.menu_btn_1 {
+                transform: translateX(-25%);
+            }
+            button.menu_btn_2 {
+                transform: translateX(25%);
+            }
+            button.menu_btn_3 {
+                transform: translateX(-25%);
+            }
+            button.menu_btn_4 {
+                transform: translateX(25%);
+            }
+            button.menu_btn_5 {
+                transform: translateX(-25%);
+            }
+        }
+        @media (orientation: portrait) {
+            button.school_btn_1 {
+                transform: translateX(-25%);
+            }
+            button.school_btn_2 {
+                transform: translateX(0%);
+            }
+            button.school_btn_3 {
+                transform: translateX(25%);
+            }
+        }
+        img.menu_btn {
+            width: 60%;
+        }
+        button.home_btn, .chi_back_btn, .west_back_btn, .name_back_btn {
+            background-color: #c7c7c739;
+            border-style: solid;
+            border: #6b6b6b;
+            border-radius: 50px;
+            font-size: 50px;
+            color: #ffffff;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+            padding: 30px 45px 30px 45px;
+            margin: 100px 25px 0 25px;
+        }        
+        img.thumbnail {
+            object-fit: cover;
+            object-position: 100% -110px;
+            width: 250px;
+            height: 150px;
+            float: left;
+            border-radius: 25px;
+            padding: 0 20px 0 0;
+        }
+        img#artwork {
+            /*height: 98%;*/
+            width: 98%;
+            border-radius: 25px;
+        }
+        h2 {
+            font: bold 50px Helvetica, Verdana, sans-serif;
+            text-align: center;
+        }
+        h3 {
+            font: bold 35px Helvetica, Verdana, sans-serif;
+            padding: 10px 0 0 0;
+            margin: 0 0 0px 10px;
+            text-align: left;
+        }
+        h4 {
+            font: 300 30px Helvetica, Verdana, sans-serif;
+            margin: 0 10px 0 10px;   
+            text-align: left;        
+        }
+        h5 {
+            font: 350 26px Helvetica, Verdana, sans-serif;
+            margin: 0 10px 0 10px;   
+            text-align: left;                
+        }
+
+            /* css rules for carousel slideshow */
+            .carousel-page {
+                width: 100%;
+                height: 100%;
+                display: none;
+                visibility: hidden;
+                animation: startCarousel 835s linear infinite 121s;
+            }
+            @keyframes
+            startCarousel {
+                0% {
+                    visibility: visible;
+                    
+                }
+                28% {
+                    visibility: hidden;
+                    
+                }
+            }
+            @media screen and (min-width: 720px) and (min-height: 1280px) {
+                .carousel-page {
+                    display: block;
+                }
+            }
+            .carousel-bg {
+                width: 100vw;
+                height: 100vh;
+                background: #ffffff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            .carousel {
+                list-style: none;
+                z-index: 1;
+            }
+
+            .carousel li span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: transparent;
+                backdrop-filter: blur(70px);
+                -webkit-backdrop-filter: blur(70px);
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: none;
+                opacity: 0;
+                z-index: 2;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-animation: fadeinfadeoutAnimation 24s linear infinite;
+                animation: fadeinfadeoutAnimation 24s linear infinite;
+            }
+            .carousel li:nth-child(1) span {
+                background-image: url(./image/artwork/1_1024.jpg);
+                -webkit-animation-delay: 120s;
+                animation-delay: 120s;
+                } 
+                .carousel li:nth-child(2) span {
+                background-image: url(./image/artwork/1_7142.jpg);
+                -webkit-animation-delay: 126s;
+                animation-delay: 126s;
+                } 
+                .carousel li:nth-child(3) span {
+                background-image: url(./image/artwork/1_1034.jpg);
+                -webkit-animation-delay: 132s;
+                animation-delay: 132s;
+                } 
+                .carousel li:nth-child(4) span {
+                background-image: url(./image/artwork/2_2147.jpg);
+                -webkit-animation-delay: 138s;
+                animation-delay: 138s;
+                } 
+                .carousel li:nth-child(5) span {
+                background-image: url(./image/artwork/2_194.jpg);
+                -webkit-animation-delay: 144s;
+                animation-delay: 144s;
+                } 
+                .carousel li:nth-child(6) span {
+                background-image: url(./image/artwork/2_6690.jpg);
+                -webkit-animation-delay: 150s;
+                animation-delay: 150s;
+                } 
+                .carousel li:nth-child(7) span {
+                background-image: url(./image/artwork/3_4647.jpg);
+                -webkit-animation-delay: 156s;
+                animation-delay: 156s;
+                } 
+                .carousel li:nth-child(8) span {
+                background-image: url(./image/artwork/3_4635.jpg);
+                -webkit-animation-delay: 162s;
+                animation-delay: 162s;
+                } 
+                .carousel li:nth-child(9) span {
+                background-image: url(./image/artwork/3_4335.jpg);
+                -webkit-animation-delay: 168s;
+                animation-delay: 168s;
+                } 
+                .carousel li:nth-child(10) span {
+                background-image: url(./image/artwork/4_1257.jpg);
+                -webkit-animation-delay: 174s;
+                animation-delay: 174s;
+                } 
+                .carousel li:nth-child(11) span {
+                background-image: url(./image/artwork/4_23.jpg);
+                -webkit-animation-delay: 180s;
+                animation-delay: 180s;
+                } 
+                .carousel li:nth-child(12) span {
+                background-image: url(./image/artwork/4_6952.jpg);
+                -webkit-animation-delay: 186s;
+                animation-delay: 186s;
+                } 
+                .carousel li:nth-child(13) span {
+                background-image: url(./image/artwork/5_2772.jpg);
+                -webkit-animation-delay: 192s;
+                animation-delay: 192s;
+                } 
+                .carousel li:nth-child(14) span {
+                background-image: url(./image/artwork/5_824.jpg);
+                -webkit-animation-delay: 198s;
+                animation-delay: 198s;
+                } 
+                .carousel li:nth-child(15) span {
+                background-image: url(./image/artwork/5_2067.jpg);
+                -webkit-animation-delay: 204s;
+                animation-delay: 204s;
+                } 
+                .carousel li:nth-child(16) span {
+                background-image: url(./image/artwork/6_3326.jpg);
+                -webkit-animation-delay: 210s;
+                animation-delay: 210s;
+                } 
+                .carousel li:nth-child(17) span {
+                background-image: url(./image/artwork/6_2868.jpg);
+                -webkit-animation-delay: 216s;
+                animation-delay: 216s;
+                } 
+                .carousel li:nth-child(18) span {
+                background-image: url(./image/artwork/6_1898.jpg);
+                -webkit-animation-delay: 222s;
+                animation-delay: 222s;
+                } 
+                .carousel li:nth-child(19) span {
+                background-image: url(./image/artwork/7_5924.jpg);
+                -webkit-animation-delay: 228s;
+                animation-delay: 228s;
+                } 
+                .carousel li:nth-child(20) span {
+                background-image: url(./image/artwork/7_213.jpg);
+                -webkit-animation-delay: 234s;
+                animation-delay: 234s;
+                } 
+                .carousel li:nth-child(21) span {
+                background-image: url(./image/artwork/7_212.jpg);
+                -webkit-animation-delay: 240s;
+                animation-delay: 240s;
+                } 
+                .carousel li:nth-child(22) span {
+                background-image: url(./image/artwork/8_2687.jpg);
+                -webkit-animation-delay: 246s;
+                animation-delay: 246s;
+                } 
+                .carousel li:nth-child(23) span {
+                background-image: url(./image/artwork/8_2719.jpg);
+                -webkit-animation-delay: 252s;
+                animation-delay: 252s;
+                } 
+                .carousel li:nth-child(24) span {
+                background-image: url(./image/artwork/8_3494.jpg);
+                -webkit-animation-delay: 258s;
+                animation-delay: 258s;
+                } 
+                .carousel li:nth-child(25) span {
+                background-image: url(./image/artwork/9_3880.jpg);
+                -webkit-animation-delay: 264s;
+                animation-delay: 264s;
+                } 
+                .carousel li:nth-child(26) span {
+                background-image: url(./image/artwork/9_4334.jpg);
+                -webkit-animation-delay: 270s;
+                animation-delay: 270s;
+                } 
+                .carousel li:nth-child(27) span {
+                background-image: url(./image/artwork/9_3495.jpg);
+                -webkit-animation-delay: 276s;
+                animation-delay: 276s;
+                } 
+                .carousel li:nth-child(28) span {
+                background-image: url(./image/artwork/10_1060.jpg);
+                -webkit-animation-delay: 282s;
+                animation-delay: 282s;
+                } 
+                .carousel li:nth-child(29) span {
+                background-image: url(./image/artwork/10_6727.jpg);
+                -webkit-animation-delay: 288s;
+                animation-delay: 288s;
+                } 
+                .carousel li:nth-child(30) span {
+                background-image: url(./image/artwork/10_2091.jpg);
+                -webkit-animation-delay: 294s;
+                animation-delay: 294s;
+                } 
+                .carousel li:nth-child(31) span {
+                background-image: url(./image/artwork/11_2099.jpg);
+                -webkit-animation-delay: 300s;
+                animation-delay: 300s;
+                } 
+                .carousel li:nth-child(32) span {
+                background-image: url(./image/artwork/11_6118.jpg);
+                -webkit-animation-delay: 306s;
+                animation-delay: 306s;
+                } 
+                .carousel li:nth-child(33) span {
+                background-image: url(./image/artwork/11_2141.jpg);
+                -webkit-animation-delay: 312s;
+                animation-delay: 312s;
+                } 
+                .carousel li:nth-child(34) span {
+                background-image: url(./image/artwork/12_1533.jpg);
+                -webkit-animation-delay: 318s;
+                animation-delay: 318s;
+                } 
+                .carousel li:nth-child(35) span {
+                background-image: url(./image/artwork/12_355.jpg);
+                -webkit-animation-delay: 324s;
+                animation-delay: 324s;
+                } 
+                .carousel li:nth-child(36) span {
+                background-image: url(./image/artwork/12_1536.jpg);
+                -webkit-animation-delay: 330s;
+                animation-delay: 330s;
+                } 
+                .carousel li:nth-child(37) span {
+                background-image: url(./image/artwork/13_4247.jpg);
+                -webkit-animation-delay: 336s;
+                animation-delay: 336s;
+                } 
+                .carousel li:nth-child(38) span {
+                background-image: url(./image/artwork/13_2686.jpg);
+                -webkit-animation-delay: 342s;
+                animation-delay: 342s;
+                } 
+                .carousel li:nth-child(39) span {
+                background-image: url(./image/artwork/13_6266.jpg);
+                -webkit-animation-delay: 348s;
+                animation-delay: 348s;
+                } 
+            @-webkit-keyframes
+            fadeinfadeoutAnimation {
+                0% {
+                    opacity: 0;
+                    -webkit-animation-timing-function: ease-in;
+                }
+                12.5% {
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                25% {
+                    opacity: 1;
+                }
+                37.5% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes
+            fadeinfadeoutAnimation {
+                0% {
+                    opacity: 0;
+                    -webkit-animation-timing-function: ease-in;
+                    animation-timing-function: ease-in;
+                }
+                12.5% {
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                    animation-timing-function: ease-out;
+                }
+                25% {
+                    opacity: 1;
+                }
+                37.5% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <div id="background">
+        <span style="opacity: 0.1; font-size: 1vh;">ver 1.0</span>
+    </div>
+    <div class="carousel-page" id="id-carousel">
+        <ul class="carousel">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+        <div class="carousel-bg"></div>
+    </div>
+    <div id="index_menu">
+        <div id="index_button">
+            <button class="png_btn menu_btn_1" id="menu_btn_1"><img src="./image/button_1.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_2" id="menu_btn_2"><img src="./image/button_2.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_3" id="menu_btn_3"><img src="./image/button_3.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_4" id="menu_btn_4"><img src="./image/button_4.png" class="menu_btn"></button>
+        </div>
+    </div>
+    <div class="sub_menu" id="chi_menu">
+        <div id="chi_menu_button">
+            <button class="png_btn menu_btn_1" id="chi_menu_btn_1"><img src="./image/button_1_1.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_2" id="chi_menu_btn_2"><img src="./image/button_1_2.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_3" id="chi_menu_btn_3"><img src="./image/button_1_3.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_4" id="chi_menu_btn_4"><img src="./image/button_1_4.png" class="menu_btn"></button>
+            <div>
+                <button class="home_btn">返回主頁</button>
+            </div>
+        </div>
+    </div>
+    <div class="sub_menu" id="west_menu">
+        <div id="west_menu_button">
+            <button class="png_btn menu_btn_1" id="west_menu_btn_1"><img src="./image/button_2_1.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_2" id="west_menu_btn_2"><img src="./image/button_2_2.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_3" id="west_menu_btn_3"><img src="./image/button_2_3.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_4" id="west_menu_btn_4"><img src="./image/button_2_4.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_5" id="west_menu_btn_5"><img src="./image/button_2_5.png" class="menu_btn"></button>
+            <div>
+                <button class="home_btn">返回主頁</button>
+            </div>
+        </div>
+    </div>
+    <div class="sub_menu" id="name_menu">
+        <div id="name_menu_button">
+            <button class="png_btn menu_btn_1" id="name_menu_btn_1"><img src="./image/button_3_1.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_2" id="name_menu_btn_2"><img src="./image/button_3_2.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_3" id="name_menu_btn_3"><img src="./image/button_3_3.png" class="menu_btn"></button>
+            <button class="png_btn menu_btn_4" id="name_menu_btn_4"><img src="./image/button_3_4.png" class="menu_btn"></button>
+            <div>
+                <button class="home_btn">返回主頁</button>
+            </div>
+        </div>
+    </div>
+    <div class="student_menu" id="group1">
+        <h2>中國畫系 幼兒組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('1_1034');" class="student_list">
+                <img src="./image/artwork/1_1034.jpg" class="thumbnail">
+                <h3>陳智明</h3>
+                <h5>木棉花水墨畫室</h5>
+                <h4>中國畫系 幼兒組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('1_7142');" class="student_list">
+                <img src="./image/artwork/1_7142.jpg" class="thumbnail">
+                <h3>李恩可</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 幼兒組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('1_1024');" class="student_list">
+                <img src="./image/artwork/1_1024.jpg" class="thumbnail">
+                <h3>陳紫瑜 </h3>
+                <h5>木棉花水墨畫室</h5>
+                <h4>中國畫系 幼兒組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('1_7144');" class="student_list">
+                <img src="./image/artwork/1_7144.jpg" class="thumbnail">
+                <h3>陳芷妡</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_4707');" class="student_list">
+                <img src="./image/artwork/1_4707.jpg" class="thumbnail">
+                <h3>甄文彥</h3>
+                <h5>This is art creative studio 想‧創作室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_5097');" class="student_list">
+                <img src="./image/artwork/1_5097.jpg" class="thumbnail">
+                <h3>鄧仲亨</h3>
+                <h5>Artists Factory 小畫家製作室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_5593');" class="student_list">
+                <img src="./image/artwork/1_5593.jpg" class="thumbnail">
+                <h3>鄭羽喬</h3>
+                <h5>Ms Winky 私人教室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_7141');" class="student_list">
+                <img src="./image/artwork/1_7141.jpg" class="thumbnail">
+                <h3>王立懿</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_5100');" class="student_list">
+                <img src="./image/artwork/1_5100.jpg" class="thumbnail">
+                <h3>王皓智</h3>
+                <h5>Artists Factory 小畫家製作室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_1036');" class="student_list">
+                <img src="./image/artwork/1_1036.jpg" class="thumbnail">
+                <h3>周廷檍</h3>
+                <h5>木棉花水墨畫室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_4701');" class="student_list">
+                <img src="./image/artwork/1_4701.jpg" class="thumbnail">
+                <h3>黃曉妍</h3>
+                <h5>This is art creative studio 想‧創作室</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_6926');" class="student_list">
+                <img src="./image/artwork/1_6926.jpg" class="thumbnail">
+                <h3>楊昕澄</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('1_2910');" class="student_list">
+                <img src="./image/artwork/1_2910.jpg" class="thumbnail">
+                <h3>劉昕曈</h3>
+                <h5>銅鑼灣維多利亞國際幼稚園</h5>
+                <h4>中國畫系 幼兒組 一等獎</h4>
+                </div>                                  
+        </div>
+        <div class="student_menu_home_button">
+            <button class="chi_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group2">
+        <h2>西洋畫系 幼兒組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('2_6690');" class="student_list">
+                <img src="./image/artwork/2_6690.jpg" class="thumbnail">
+                <h3>凌昉呈</h3>
+                <h5>香港培正小學（幼稚園部）</h5>
+                <h4>西洋畫系 幼兒組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('2_194');" class="student_list">
+                <img src="./image/artwork/2_194.jpg" class="thumbnail">
+                <h3>許舜博</h3>
+                <h5>中華基督教會柴灣堂幼兒園</h5>
+                <h4>西洋畫系 幼兒組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('2_2147');" class="student_list">
+                <img src="./image/artwork/2_2147.jpg" class="thumbnail">
+                <h3>梁皓橋</h3>
+                <h5>姬絲汀畫室 Sachet Workshop</h5>
+                <h4>西洋畫系 幼兒組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('2_3358');" class="student_list">
+                <img src="./image/artwork/2_3358.jpg" class="thumbnail">
+                <h3>林靖媛</h3>
+                <h5>國際英文幼稚園</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_298');" class="student_list">
+                <img src="./image/artwork/2_298.jpg" class="thumbnail">
+                <h3>雷澄</h3>
+                <h5>宣道會劉平齋紀念國際學校</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_6524');" class="student_list">
+                <img src="./image/artwork/2_6524.jpg" class="thumbnail">
+                <h3>王濼詩</h3>
+                <h5>Art Front Studio</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_2952');" class="student_list">
+                <img src="./image/artwork/2_2952.jpg" class="thumbnail">
+                <h3>何樂希</h3>
+                <h5>WingsMaker</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_6985');" class="student_list">
+                <img src="./image/artwork/2_6985.jpg" class="thumbnail">
+                <h3>岑倬倩</h3>
+                <h5>BIG House ART Workshop</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_2055');" class="student_list">
+                <img src="./image/artwork/2_2055.jpg" class="thumbnail">
+                <h3>李偉宸</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_728');" class="student_list">
+                <img src="./image/artwork/2_728.jpg" class="thumbnail">
+                <h3>孫心恬</h3>
+                <h5>保良局葉吳彬彬幼稚園</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_4406');" class="student_list">
+                <img src="./image/artwork/2_4406.jpg" class="thumbnail">
+                <h3>彭可琳</h3>
+                <h5>ARTCO Gallery</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_3560');" class="student_list">
+                <img src="./image/artwork/2_3560.jpg" class="thumbnail">
+                <h3>黃芯睿</h3>
+                <h5>趣意畫坊 Fanny's Art</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_2056');" class="student_list">
+                <img src="./image/artwork/2_2056.jpg" class="thumbnail">
+                <h3>榊原杏</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_5335');" class="student_list">
+                <img src="./image/artwork/2_5335.jpg" class="thumbnail">
+                <h3>鄭靖懷</h3>
+                <h5>Artists Factory 小畫家製作室</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_601');" class="student_list">
+                <img src="./image/artwork/2_601.jpg" class="thumbnail">
+                <h3>鄭睿嵐</h3>
+                <h5>維多利亞（海峰園）幼兒園</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_2786');" class="student_list">
+                <img src="./image/artwork/2_2786.jpg" class="thumbnail">
+                <h3>盧靜孜</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('2_4833');" class="student_list">
+                <img src="./image/artwork/2_4833.jpg" class="thumbnail">
+                <h3>簡善桐</h3>
+                <h5>Artists Factory 小畫家製作室</h5>
+                <h4>西洋畫系 幼兒組 一等獎</h4>
+                </div>                
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="west_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group3">
+        <h2>百家姓畫系 幼兒組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('3_4335');" class="student_list">
+                <img src="./image/artwork/3_4335.jpg" class="thumbnail">
+                <h3>趙英博</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4635');" class="student_list">
+                <img src="./image/artwork/3_4635.jpg" class="thumbnail">
+                <h3>何梓瑜</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4647');" class="student_list">
+                <img src="./image/artwork/3_4647.jpg" class="thumbnail">
+                <h3>唐承澤</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('3_5654');" class="student_list">
+                <img src="./image/artwork/3_5654.jpg" class="thumbnail">
+                <h3>蔡銥旻</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4199');" class="student_list">
+                <img src="./image/artwork/3_4199.jpg" class="thumbnail">
+                <h3>蔡凱同</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4621');" class="student_list">
+                <img src="./image/artwork/3_4621.jpg" class="thumbnail">
+                <h3>林禕忱</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_2728');" class="student_list">
+                <img src="./image/artwork/3_2728.jpg" class="thumbnail">
+                <h3>張琦悅</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4646');" class="student_list">
+                <img src="./image/artwork/3_4646.jpg" class="thumbnail">
+                <h3>盘嘉颖</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_4915');" class="student_list">
+                <img src="./image/artwork/3_4915.jpg" class="thumbnail">
+                <h3>錢康瑜</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('3_5537');" class="student_list">
+                <img src="./image/artwork/3_5537.jpg" class="thumbnail">
+                <h3>龔子瑜</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 幼兒組 一等獎</h4>
+                </div>
+                
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="name_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group4">
+        <h2>中國畫系 初小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('4_6952');" class="student_list">
+                <img src="./image/artwork/4_6952.jpg" class="thumbnail">
+                <h3>劉嘉辰</h3>
+                <h5>晴韻藝術室</h5>
+                <h4>中國畫系 初小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('4_23');" class="student_list">
+                <img src="./image/artwork/4_23.jpg" class="thumbnail">
+                <h3>李爾晞</h3>
+                <h5>保良局陸慶濤小學</h5>
+                <h4>中國畫系 初小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('4_1257');" class="student_list">
+                <img src="./image/artwork/4_1257.jpg" class="thumbnail">
+                <h3>陳芍甯</h3>
+                <h5>聖士提反書院附屬小學</h5>
+                <h4>中國畫系 初小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('4_3970');" class="student_list">
+                <img src="./image/artwork/4_3970.jpg" class="thumbnail">
+                <h3>呂浩殷</h3>
+                <h5>北角循道學校</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_3543');" class="student_list">
+                <img src="./image/artwork/4_3543.jpg" class="thumbnail">
+                <h3>黃芊睿</h3>
+                <h5>趣意畫坊 Fanny's Art</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_2075');" class="student_list">
+                <img src="./image/artwork/4_2075.jpg" class="thumbnail">
+                <h3>吳圓昭</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_7146');" class="student_list">
+                <img src="./image/artwork/4_7146.jpg" class="thumbnail">
+                <h3>宋蕊妤</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_6557');" class="student_list">
+                <img src="./image/artwork/4_6557.jpg" class="thumbnail">
+                <h3>李宛錡</h3>
+                <h5>燕子畫苑文化中心</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_1023');" class="student_list">
+                <img src="./image/artwork/4_1023.jpg" class="thumbnail">
+                <h3>周靖喻</h3>
+                <h5>木棉花水墨畫室</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_2058');" class="student_list">
+                <img src="./image/artwork/4_2058.jpg" class="thumbnail">
+                <h3>張正姸</h3>
+                <h5>香港培道小學</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_1752');" class="student_list">
+                <img src="./image/artwork/4_1752.jpg" class="thumbnail">
+                <h3>莊斯惠</h3>
+                <h5>聖公會奉基千禧小學</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_7150');" class="student_list">
+                <img src="./image/artwork/4_7150.jpg" class="thumbnail">
+                <h3>楊泳鍶</h3>
+                <h5>Artiff</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_689');" class="student_list">
+                <img src="./image/artwork/4_689.jpg" class="thumbnail">
+                <h3>黎熹兒</h3>
+                <h5>瑪利曼小學</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('4_1026');" class="student_list">
+                <img src="./image/artwork/4_1026.jpg" class="thumbnail">
+                <h3>鍾曉懿</h3>
+                <h5>木棉花水墨畫室</h5>
+                <h4>中國畫系 初小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="chi_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group5">
+        <h2>西洋畫系 初小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('5_2067');" class="student_list">
+                <img src="./image/artwork/5_2067.jpg" class="thumbnail">
+                <h3>蕭愷樂</h3>
+                <h5>Please be Who</h5>
+                <h4>西洋畫系 初小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('5_824');" class="student_list">
+                <img src="./image/artwork/5_824.jpg" class="thumbnail">
+                <h3>葉泓謙</h3>
+                <h5>聖若瑟英文小學</h5>
+                <h4>西洋畫系 初小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2772');" class="student_list">
+                <img src="./image/artwork/5_2772.jpg" class="thumbnail">
+                <h3>程恩琋</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('5_217');" class="student_list">
+                <img src="./image/artwork/5_217.jpg" class="thumbnail">
+                <h3>李汶洛</h3>
+                <h5>喇沙小學</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_41');" class="student_list">
+                <img src="./image/artwork/5_41.jpg" class="thumbnail">
+                <h3>周卓欣</h3>
+                <h5>嘉諾撒聖心學校</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_3966');" class="student_list">
+                <img src="./image/artwork/5_3966.jpg" class="thumbnail">
+                <h3>陳語欣</h3>
+                <h5>聚妍藝術畫苑</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2161');" class="student_list">
+                <img src="./image/artwork/5_2161.jpg" class="thumbnail">
+                <h3>曾逸懿</h3>
+                <h5>姬絲汀畫室 Sachet Workshop</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_3526');" class="student_list">
+                <img src="./image/artwork/5_3526.jpg" class="thumbnail">
+                <h3>馮曉恩</h3>
+                <h5>雅士坊</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2781');" class="student_list">
+                <img src="./image/artwork/5_2781.jpg" class="thumbnail">
+                <h3>盧孜霖</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_545');" class="student_list">
+                <img src="./image/artwork/5_545.jpg" class="thumbnail">
+                <h3>吳卓宜</h3>
+                <h5>聖安多尼學校</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2224');" class="student_list">
+                <img src="./image/artwork/5_2224.jpg" class="thumbnail">
+                <h3>李以軒</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2757');" class="student_list">
+                <img src="./image/artwork/5_2757.jpg" class="thumbnail">
+                <h3>李熙雯</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_1864');" class="student_list">
+                <img src="./image/artwork/5_1864.jpg" class="thumbnail">
+                <h3>沈家逸</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_118');" class="student_list">
+                <img src="./image/artwork/5_118.jpg" class="thumbnail">
+                <h3>林汛芝</h3>
+                <h5>葛量洪校友會黃埔學校</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_1700');" class="student_list">
+                <img src="./image/artwork/5_1700.jpg" class="thumbnail">
+                <h3>陳柏睿</h3>
+                <h5>沙田官立小學</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2794');" class="student_list">
+                <img src="./image/artwork/5_2794.jpg" class="thumbnail">
+                <h3>黃傲竣</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_2664');" class="student_list">
+                <img src="./image/artwork/5_2664.jpg" class="thumbnail">
+                <h3>蔡奕言</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_312');" class="student_list">
+                <img src="./image/artwork/5_312.jpg" class="thumbnail">
+                <h3>鄭巧兒</h3>
+                <h5>保良局香港道教聯合會圓玄小學</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('5_3967');" class="student_list">
+                <img src="./image/artwork/5_3967.jpg" class="thumbnail">
+                <h3>魏子鈞</h3>
+                <h5>聚妍藝術畫苑</h5>
+                <h4>西洋畫系 初小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="west_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group6">
+        <h2>百家姓畫系 初小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('6_1898');" class="student_list">
+                <img src="./image/artwork/6_1898.jpg" class="thumbnail">
+                <h3>謝芷熵</h3>
+                <h5>保良局林文燦英文小學</h5>
+                <h4>百家姓畫系 初小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('6_2868');" class="student_list">
+                <img src="./image/artwork/6_2868.jpg" class="thumbnail">
+                <h3>潘煒桁</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 初小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('6_3326');" class="student_list">
+                <img src="./image/artwork/6_3326.jpg" class="thumbnail">
+                <h3>黃婉靈</h3>
+                <h5>李志達紀念學校</h5>
+                <h4>百家姓畫系 初小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('6_2015');" class="student_list">
+                <img src="./image/artwork/6_2015.jpg" class="thumbnail">
+                <h3>蔡浠悠</h3>
+                <h5>Artin Creative Workshop</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('6_5139');" class="student_list">
+                <img src="./image/artwork/6_5139.jpg" class="thumbnail">
+                <h3>林希陽</h3>
+                <h5>香港南區官立小學</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('6_2949');" class="student_list">
+                <img src="./image/artwork/6_2949.jpg" class="thumbnail">
+                <h3>黃梓聰</h3>
+                <h5>Norwegian International School</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('6_2023');" class="student_list">
+                <img src="./image/artwork/6_2023.jpg" class="thumbnail">
+                <h3>尹思行</h3>
+                <h5>Artin Creative Workshop</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('6_5143');" class="student_list">
+                <img src="./image/artwork/6_5143.jpg" class="thumbnail">
+                <h3>司徒穎嵐</h3>
+                <h5>Artin Creative Workshop</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('6_661');" class="student_list">
+                <img src="./image/artwork/6_661.jpg" class="thumbnail">
+                <h3>張凱程</h3>
+                <h5>將軍澳天主教小學</h5>
+                <h4>百家姓畫系 初小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="name_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group7">
+        <h2>中國畫系 高小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('7_212');" class="student_list">
+                <img src="./image/artwork/7_212.jpg" class="thumbnail">
+                <h3>盧籽峰</h3>
+                <h5>喇沙小學</h5>
+                <h4>中國畫系 高小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('7_213');" class="student_list">
+                <img src="./image/artwork/7_213.jpg" class="thumbnail">
+                <h3>曾立仁</h3>
+                <h5>喇沙小學</h5>
+                <h4>中國畫系 高小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('7_5924');" class="student_list">
+                <img src="./image/artwork/7_5924.jpg" class="thumbnail">
+                <h3>黃卓欣</h3>
+                <h5>玫瑰崗學校</h5>
+                <h4>中國畫系 高小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('7_714');" class="student_list">
+                <img src="./image/artwork/7_714.jpg" class="thumbnail">
+                <h3>王美晴</h3>
+                <h5>金巴崙長老會耀道小學</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_5146');" class="student_list">
+                <img src="./image/artwork/7_5146.jpg" class="thumbnail">
+                <h3>許懿揚</h3>
+                <h5>Canadian International School of Hong Kong</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2082');" class="student_list">
+                <img src="./image/artwork/7_2082.jpg" class="thumbnail">
+                <h3>蘇泓錕</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_3798');" class="student_list">
+                <img src="./image/artwork/7_3798.jpg" class="thumbnail">
+                <h3>石瑋殷</h3>
+                <h5>將軍澳官立小學</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_6917');" class="student_list">
+                <img src="./image/artwork/7_6917.jpg" class="thumbnail">
+                <h3>蔣彤瑛</h3>
+                <h5>德望小學</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_1672');" class="student_list">
+                <img src="./image/artwork/7_1672.jpg" class="thumbnail">
+                <h3>張棋翔</h3>
+                <h5>林村公立黃福鑾紀念學校</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2541');" class="student_list">
+                <img src="./image/artwork/7_2541.jpg" class="thumbnail">
+                <h3>李泓樂</h3>
+                <h5>青蛙畫室</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2569');" class="student_list">
+                <img src="./image/artwork/7_2569.jpg" class="thumbnail">
+                <h3>陳明樟</h3>
+                <h5>青蛙畫室</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2582');" class="student_list">
+                <img src="./image/artwork/7_2582.jpg" class="thumbnail">
+                <h3>蕭念晴</h3>
+                <h5>青蛙畫室</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2071');" class="student_list">
+                <img src="./image/artwork/7_2071.jpg" class="thumbnail">
+                <h3>張懿昕</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('7_2096');" class="student_list">
+                <img src="./image/artwork/7_2096.jpg" class="thumbnail">
+                <h3>霍建滔</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 高小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="chi_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group8">
+        <h2>西洋畫系 高小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('8_3494');" class="student_list">
+                <img src="./image/artwork/8_3494.jpg" class="thumbnail">
+                <h3>朱晉希</h3>
+                <h5>荃灣官立小學</h5>
+                <h4>西洋畫系 高小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2719');" class="student_list">
+                <img src="./image/artwork/8_2719.jpg" class="thumbnail">
+                <h3>杜鎧晴</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 高小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2687');" class="student_list">
+                <img src="./image/artwork/8_2687.jpg" class="thumbnail">
+                <h3>陸詠林</h3>
+                <h5>Blossom Park Art & Drawing</h5>
+                <h4>西洋畫系 高小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2583');" class="student_list">
+                <img src="./image/artwork/8_2583.jpg" class="thumbnail">
+                <h3>韓佳純</h3>
+                <h5>香港現代藝術協會</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_20');" class="student_list">
+                <img src="./image/artwork/8_20.jpg" class="thumbnail">
+                <h3>魏藝</h3>
+                <h5>嘉諾撒聖瑪利學校</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_5363');" class="student_list">
+                <img src="./image/artwork/8_5363.jpg" class="thumbnail">
+                <h3>溫可馨</h3>
+                <h5>保良局朱正賢小學</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_3522');" class="student_list">
+                <img src="./image/artwork/8_3522.jpg" class="thumbnail">
+                <h3>蘇信螢</h3>
+                <h5>雅士坊</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_549');" class="student_list">
+                <img src="./image/artwork/8_549.jpg" class="thumbnail">
+                <h3>李雨萌</h3>
+                <h5>聖三一堂小學</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_699');" class="student_list">
+                <img src="./image/artwork/8_699.jpg" class="thumbnail">
+                <h3>蔡喻婷</h3>
+                <h5>福建中學附屬學校</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2226');" class="student_list">
+                <img src="./image/artwork/8_2226.jpg" class="thumbnail">
+                <h3>林曉瑩</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_1605');" class="student_list">
+                <img src="./image/artwork/8_1605.jpg" class="thumbnail">
+                <h3>姚清栩</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_3599');" class="student_list">
+                <img src="./image/artwork/8_3599.jpg" class="thumbnail">
+                <h3>彭銘晞</h3>
+                <h5>Artland 童心藝術教室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_7116');" class="student_list">
+                <img src="./image/artwork/8_7116.jpg" class="thumbnail">
+                <h3>陳思言</h3>
+                <h5>Find Arts Studio</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_5884');" class="student_list">
+                <img src="./image/artwork/8_5884.jpg" class="thumbnail">
+                <h3>甄子晴</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2577');" class="student_list">
+                <img src="./image/artwork/8_2577.jpg" class="thumbnail">
+                <h3>蔡依嵐</h3>
+                <h5>青蛙畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_1009');" class="student_list">
+                <img src="./image/artwork/8_1009.jpg" class="thumbnail">
+                <h3>林曉延</h3>
+                <h5>香港聖公會聖雅各小學</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2167');" class="student_list">
+                <img src="./image/artwork/8_2167.jpg" class="thumbnail">
+                <h3>楊秀穎</h3>
+                <h5>姬絲汀畫室 Sachet Workshop</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_3458');" class="student_list">
+                <img src="./image/artwork/8_3458.jpg" class="thumbnail">
+                <h3>李泓義</h3>
+                <h5>雅士坊</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_3015');" class="student_list">
+                <img src="./image/artwork/8_3015.jpg" class="thumbnail">
+                <h3>梁爾沂</h3>
+                <h5>聖公會主愛小學</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_5268');" class="student_list">
+                <img src="./image/artwork/8_5268.jpg" class="thumbnail">
+                <h3>李錦妍</h3>
+                <h5>葛量洪校友會黃埔學校</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_1599');" class="student_list">
+                <img src="./image/artwork/8_1599.jpg" class="thumbnail">
+                <h3>林煒峯</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2225');" class="student_list">
+                <img src="./image/artwork/8_2225.jpg" class="thumbnail">
+                <h3>苗家銘</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2045');" class="student_list">
+                <img src="./image/artwork/8_2045.jpg" class="thumbnail">
+                <h3>楊梓均</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('8_2219');" class="student_list">
+                <img src="./image/artwork/8_2219.jpg" class="thumbnail">
+                <h3>歐嘉溋</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="west_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group9">
+        <h2>百家姓畫系 高小組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('9_3495');" class="student_list">
+                <img src="./image/artwork/9_3495.jpg" class="thumbnail">
+                <h3>朱晉希</h3>
+                <h5>荃灣官立小學</h5>
+                <h4>百家姓畫系 高小組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('9_4334');" class="student_list">
+                <img src="./image/artwork/9_4334.jpg" class="thumbnail">
+                <h3>鄧樂姸</h3>
+                <h5>Artiste Studio</h5>
+                <h4>百家姓畫系 高小組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('9_3880');" class="student_list">
+                <img src="./image/artwork/9_3880.jpg" class="thumbnail">
+                <h3>鄺念祈</h3>
+                <h5>聖瑪加利男女英文中小學</h5>
+                <h4>百家姓畫系 高小組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('9_3314');" class="student_list">
+                <img src="./image/artwork/9_3314.jpg" class="thumbnail">
+                <h3>黃婉桐</h3>
+                <h5>李志達紀念學校</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_2808');" class="student_list">
+                <img src="./image/artwork/9_2808.jpg" class="thumbnail">
+                <h3>趙穎兒</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_7154');" class="student_list">
+                <img src="./image/artwork/9_7154.jpg" class="thumbnail">
+                <h3>曾紫東</h3>
+                <h5>Aaliyah Kam Chu</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_2011');" class="student_list">
+                <img src="./image/artwork/9_2011.jpg" class="thumbnail">
+                <h3>陸愷文</h3>
+                <h5>Artin Creative Workshop</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_3835');" class="student_list">
+                <img src="./image/artwork/9_3835.jpg" class="thumbnail">
+                <h3>許可欣</h3>
+                <h5>李志達紀念學校</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_1075');" class="student_list">
+                <img src="./image/artwork/9_1075.jpg" class="thumbnail">
+                <h3>楊竣然</h3>
+                <h5>Only Arts Studio</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_294');" class="student_list">
+                <img src="./image/artwork/9_294.jpg" class="thumbnail">
+                <h3>夏宇澤</h3>
+                <h5>五旬節于良發小學</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_3316');" class="student_list">
+                <img src="./image/artwork/9_3316.jpg" class="thumbnail">
+                <h3>林駿灝</h3>
+                <h5>李志達紀念學校</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_5205');" class="student_list">
+                <img src="./image/artwork/9_5205.jpg" class="thumbnail">
+                <h3>林芊仴</h3>
+                <h5>香港南區官立小學</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_5680');" class="student_list">
+                <img src="./image/artwork/9_5680.jpg" class="thumbnail">
+                <h3>陳思恩</h3>
+                <h5>嘉諾撒小學（新蒲崗）</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('9_6468');" class="student_list">
+                <img src="./image/artwork/9_6468.jpg" class="thumbnail">
+                <h3>任思語</h3>
+                <h5>廣州南沙民心港人子弟學校</h5>
+                <h4>百家姓畫系 高小組 一等獎</h4>
+                </div>
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="name_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group10">
+        <h2>中國畫系 中學組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('10_2091');" class="student_list">
+                <img src="./image/artwork/10_2091.jpg" class="thumbnail">
+                <h3>林君彥</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 中學組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('10_6727');" class="student_list">
+                <img src="./image/artwork/10_6727.jpg" class="thumbnail">
+                <h3>蔡旭</h3>
+                <h5>燕子畫苑文化中心</h5>
+                <h4>中國畫系 中學組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('10_1060');" class="student_list">
+                <img src="./image/artwork/10_1060.jpg" class="thumbnail">
+                <h3>辜思睿</h3>
+                <h5>拔萃女書院</h5>
+                <h4>中國畫系 中學組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('10_6714');" class="student_list">
+                <img src="./image/artwork/10_6714.jpg" class="thumbnail">
+                <h3>謝熒烽</h3>
+                <h5>燕子畫苑文化中心</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_2279');" class="student_list">
+                <img src="./image/artwork/10_2279.jpg" class="thumbnail">
+                <h3>劉婷玉</h3>
+                <h5>香港加拿大國際學校</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_6938');" class="student_list">
+                <img src="./image/artwork/10_6938.jpg" class="thumbnail">
+                <h3>梁仲廉</h3>
+                <h5>華仁書院（九龍）</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_2673');" class="student_list">
+                <img src="./image/artwork/10_2673.jpg" class="thumbnail">
+                <h3>洪一鳴</h3>
+                <h5>香港道教聯合會鄧顯紀念中學</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_4735');" class="student_list">
+                <img src="./image/artwork/10_4735.jpg" class="thumbnail">
+                <h3>黃昊威</h3>
+                <h5>廣州南沙民心港人子弟學校</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_3039');" class="student_list">
+                <img src="./image/artwork/10_3039.jpg" class="thumbnail">
+                <h3>梁仁安</h3>
+                <h5>孔教學院大成何郭佩珍中學</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_691');" class="student_list">
+                <img src="./image/artwork/10_691.jpg" class="thumbnail">
+                <h3>鍾汶諺</h3>
+                <h5>可道中學（嗇色園主辦）</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_4569');" class="student_list">
+                <img src="./image/artwork/10_4569.jpg" class="thumbnail">
+                <h3>邱雅言</h3>
+                <h5>瑪利諾修院學校（中學部）</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_7065');" class="student_list">
+                <img src="./image/artwork/10_7065.jpg" class="thumbnail">
+                <h3>陳曉青</h3>
+                <h5>趙芬書畫工作室</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_2090');" class="student_list">
+                <img src="./image/artwork/10_2090.jpg" class="thumbnail">
+                <h3>林彥均</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('10_3011');" class="student_list">
+                <img src="./image/artwork/10_3011.jpg" class="thumbnail">
+                <h3>凌瑞軒</h3>
+                <h5>羅定邦中學</h5>
+                <h4>中國畫系 中學組 一等獎</h4>
+                </div>                
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="chi_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group11">
+        <h2>西洋畫系 初中組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('11_2141');" class="student_list">
+                <img src="./image/artwork/11_2141.jpg" class="thumbnail">
+                <h3>洪文謙</h3>
+                <h5>姬絲汀畫室 Sachet Workshop</h5>
+                <h4>西洋畫系 初中組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('11_6118');" class="student_list">
+                <img src="./image/artwork/11_6118.jpg" class="thumbnail">
+                <h3>楊心蕎</h3>
+                <h5>One Point Studio</h5>
+                <h4>西洋畫系 初中組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2099');" class="student_list">
+                <img src="./image/artwork/11_2099.jpg" class="thumbnail">
+                <h3>曾致豪</h3>
+                <h5>艾迪畫室</h5>
+                <h4>西洋畫系 初中組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2525');" class="student_list">
+                <img src="./image/artwork/11_2525.jpg" class="thumbnail">
+                <h3>苗澄希</h3>
+                <h5>天主教郭得勝中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2811');" class="student_list">
+                <img src="./image/artwork/11_2811.jpg" class="thumbnail">
+                <h3>吳柏言</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_3559');" class="student_list">
+                <img src="./image/artwork/11_3559.jpg" class="thumbnail">
+                <h3>莊梓浚</h3>
+                <h5>Artland 童心藝術教室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_6762');" class="student_list">
+                <img src="./image/artwork/11_6762.jpg" class="thumbnail">
+                <h3>冼芯鋭</h3>
+                <h5>元朗商會中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_5866');" class="student_list">
+                <img src="./image/artwork/11_5866.jpg" class="thumbnail">
+                <h3>歐玥彤</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_997');" class="student_list">
+                <img src="./image/artwork/11_997.jpg" class="thumbnail">
+                <h3>李樂忻</h3>
+                <h5>沙田崇真中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2553');" class="student_list">
+                <img src="./image/artwork/11_2553.jpg" class="thumbnail">
+                <h3>林煒賀</h3>
+                <h5>青蛙畫室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_73');" class="student_list">
+                <img src="./image/artwork/11_73.jpg" class="thumbnail">
+                <h3>謝婧玲</h3>
+                <h5>迦密聖道中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2078');" class="student_list">
+                <img src="./image/artwork/11_2078.jpg" class="thumbnail">
+                <h3>徐一</h3>
+                <h5>香港青年協會徐悲鴻藝術空間</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_6256');" class="student_list">
+                <img src="./image/artwork/11_6256.jpg" class="thumbnail">
+                <h3>楊培焜</h3>
+                <h5>香港道教聯合會鄧顯紀念中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_5209');" class="student_list">
+                <img src="./image/artwork/11_5209.jpg" class="thumbnail">
+                <h3>張韻芊</h3>
+                <h5>浸信會永隆中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_6093');" class="student_list">
+                <img src="./image/artwork/11_6093.jpg" class="thumbnail">
+                <h3>黃思朗</h3>
+                <h5>梵星創意畫院</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_6006');" class="student_list">
+                <img src="./image/artwork/11_6006.jpg" class="thumbnail">
+                <h3>趙俙詠</h3>
+                <h5>梵星創意畫院</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_1960');" class="student_list">
+                <img src="./image/artwork/11_1960.jpg" class="thumbnail">
+                <h3>叢正泓</h3>
+                <h5>聖芳濟各書院</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_188');" class="student_list">
+                <img src="./image/artwork/11_188.jpg" class="thumbnail">
+                <h3>黃梓恒</h3>
+                <h5>葵涌循道中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_5836');" class="student_list">
+                <img src="./image/artwork/11_5836.jpg" class="thumbnail">
+                <h3>李霜研</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2564');" class="student_list">
+                <img src="./image/artwork/11_2564.jpg" class="thumbnail">
+                <h3>梁晉唯</h3>
+                <h5>青蛙畫室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2586');" class="student_list">
+                <img src="./image/artwork/11_2586.jpg" class="thumbnail">
+                <h3>丁慧</h3>
+                <h5>香港現代藝術協會</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_3516');" class="student_list">
+                <img src="./image/artwork/11_3516.jpg" class="thumbnail">
+                <h3>潘一正</h3>
+                <h5>雅士坊</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_317');" class="student_list">
+                <img src="./image/artwork/11_317.jpg" class="thumbnail">
+                <h3>陳琬晴</h3>
+                <h5>順德聯誼總會胡兆熾中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_2591');" class="student_list">
+                <img src="./image/artwork/11_2591.jpg" class="thumbnail">
+                <h3>李續文</h3>
+                <h5>福建中學</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_1879');" class="student_list">
+                <img src="./image/artwork/11_1879.jpg" class="thumbnail">
+                <h3>蔡泓浚</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('11_3871');" class="student_list">
+                <img src="./image/artwork/11_3871.jpg" class="thumbnail">
+                <h3>區譪尹</h3>
+                <h5>藝柏琴行</h5>
+                <h4>西洋畫系 初中組 一等獎</h4>
+                </div>                
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="west_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group12">
+        <h2>西洋畫系 高中組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('12_1536');" class="student_list">
+                <img src="./image/artwork/12_1536.jpg" class="thumbnail">
+                <h3>倪明欣</h3>
+                <h5>DRAWGRAPHY</h5>
+                <h4>西洋畫系 高中組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('12_355');" class="student_list">
+                <img src="./image/artwork/12_355.jpg" class="thumbnail">
+                <h3>蘇宣霖</h3>
+                <h5>風采中學（教育評議會主辦）</h5>
+                <h4>西洋畫系 高中組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('12_1533');" class="student_list">
+                <img src="./image/artwork/12_1533.jpg" class="thumbnail">
+                <h3>張芷麒</h3>
+                <h5>DRAWGRAPHY</h5>
+                <h4>西洋畫系 高中組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('12_808');" class="student_list">
+                <img src="./image/artwork/12_808.jpg" class="thumbnail">
+                <h3>張鐥希</h3>
+                <h5>風采中學（教育評議會主辦）</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_159');" class="student_list">
+                <img src="./image/artwork/12_159.jpg" class="thumbnail">
+                <h3>伍熙桐</h3>
+                <h5>將軍澳官立中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_325');" class="student_list">
+                <img src="./image/artwork/12_325.jpg" class="thumbnail">
+                <h3>朱鑫瑩</h3>
+                <h5>港九街坊婦女會孫方中書院</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_288');" class="student_list">
+                <img src="./image/artwork/12_288.jpg" class="thumbnail">
+                <h3>梁樂浠</h3>
+                <h5>聖保羅男女中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_2748');" class="student_list">
+                <img src="./image/artwork/12_2748.jpg" class="thumbnail">
+                <h3>曾景孺</h3>
+                <h5>東華三院張明添中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_5831');" class="student_list">
+                <img src="./image/artwork/12_5831.jpg" class="thumbnail">
+                <h3>黃梓瑜</h3>
+                <h5>創知中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_1074');" class="student_list">
+                <img src="./image/artwork/12_1074.jpg" class="thumbnail">
+                <h3>黃詠琳</h3>
+                <h5>基督教香港信義會元朗信義中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_5902');" class="student_list">
+                <img src="./image/artwork/12_5902.jpg" class="thumbnail">
+                <h3>虞嘉悅</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_1222');" class="student_list">
+                <img src="./image/artwork/12_1222.jpg" class="thumbnail">
+                <h3>蕭雅澤</h3>
+                <h5>香港道教聯合會圓玄學院第二中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_5219');" class="student_list">
+                <img src="./image/artwork/12_5219.jpg" class="thumbnail">
+                <h3>呂婉婧</h3>
+                <h5>浸信會永隆中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_5878');" class="student_list">
+                <img src="./image/artwork/12_5878.jpg" class="thumbnail">
+                <h3>周希穎</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_2902');" class="student_list">
+                <img src="./image/artwork/12_2902.jpg" class="thumbnail">
+                <h3>林彤</h3>
+                <h5>高雷中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_5845');" class="student_list">
+                <img src="./image/artwork/12_5845.jpg" class="thumbnail">
+                <h3>馬汶揚</h3>
+                <h5>西貝畫室</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_836');" class="student_list">
+                <img src="./image/artwork/12_836.jpg" class="thumbnail">
+                <h3>馬梓暢</h3>
+                <h5>風采中學（教育評議會主辦）</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_4172');" class="student_list">
+                <img src="./image/artwork/12_4172.jpg" class="thumbnail">
+                <h3>郭宇盛</h3>
+                <h5>香港道教聯合會圓玄學院第一中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_1634');" class="student_list">
+                <img src="./image/artwork/12_1634.jpg" class="thumbnail">
+                <h3>陳芷凝</h3>
+                <h5>香港道教聯合會圓玄學院第二中學</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_2291');" class="student_list">
+                <img src="./image/artwork/12_2291.jpg" class="thumbnail">
+                <h3>陳潔福</h3>
+                <h5>小蜜蜂畫廊</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_4580');" class="student_list">
+                <img src="./image/artwork/12_4580.jpg" class="thumbnail">
+                <h3>黃懿行</h3>
+                <h5>CreativeKids 奇極創作室</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_3513');" class="student_list">
+                <img src="./image/artwork/12_3513.jpg" class="thumbnail">
+                <h3>董凈妍</h3>
+                <h5>雅士坊</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_2434');" class="student_list">
+                <img src="./image/artwork/12_2434.jpg" class="thumbnail">
+                <h3>黎祉呈</h3>
+                <h5>穎蔓畫室</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('12_6375');" class="student_list">
+                <img src="./image/artwork/12_6375.jpg" class="thumbnail">
+                <h3>錢君翹</h3>
+                <h5>姬絲汀畫室 Sachet Workshop</h5>
+                <h4>西洋畫系 高中組 一等獎</h4>
+                </div>                
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="west_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="group13">
+        <h2>百家姓畫系 中學組</h2>
+        <div class="student_menu_button">
+            <div onclick="displayArtwork('13_6266');" class="student_list">
+                <img src="./image/artwork/13_6266.jpg" class="thumbnail">
+                <h3>黃家麒</h3>
+                <h5>天主教慈幼會伍少梅中學</h5>
+                <h4>百家姓畫系 中學組 冠軍</h4>
+                </div> 
+                <div onclick="displayArtwork('13_2686');" class="student_list">
+                <img src="./image/artwork/13_2686.jpg" class="thumbnail">
+                <h3>趙苡竹</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>百家姓畫系 中學組 亞軍</h4>
+                </div> 
+                <div onclick="displayArtwork('13_4247');" class="student_list">
+                <img src="./image/artwork/13_4247.jpg" class="thumbnail">
+                <h3>黃晞琳</h3>
+                <h5>瑪利諾修院學校（中學部）</h5>
+                <h4>百家姓畫系 中學組 季軍</h4>
+                </div> 
+                <div onclick="displayArtwork('13_6202');" class="student_list">
+                <img src="./image/artwork/13_6202.jpg" class="thumbnail">
+                <h3>黎悅因</h3>
+                <h5>田家炳中學</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_6195');" class="student_list">
+                <img src="./image/artwork/13_6195.jpg" class="thumbnail">
+                <h3>朱樂晴</h3>
+                <h5>田家炳中學</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_1349');" class="student_list">
+                <img src="./image/artwork/13_1349.jpg" class="thumbnail">
+                <h3>李雅麗</h3>
+                <h5>中華基督教會全完中學</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_5882');" class="student_list">
+                <img src="./image/artwork/13_5882.jpg" class="thumbnail">
+                <h3>莊沛翰</h3>
+                <h5>佛教大光慈航中學</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_2706');" class="student_list">
+                <img src="./image/artwork/13_2706.jpg" class="thumbnail">
+                <h3>林冠名</h3>
+                <h5>金聲藝術中心</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_5993');" class="student_list">
+                <img src="./image/artwork/13_5993.jpg" class="thumbnail">
+                <h3>程溢朗</h3>
+                <h5>梵星創意畫院</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_3949');" class="student_list">
+                <img src="./image/artwork/13_3949.jpg" class="thumbnail">
+                <h3>張俊皓</h3>
+                <h5>聚妍藝術畫苑</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_6192');" class="student_list">
+                <img src="./image/artwork/13_6192.jpg" class="thumbnail">
+                <h3>王靜楠</h3>
+                <h5>田家炳中學</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+                <div onclick="displayArtwork('13_1724');" class="student_list">
+                <img src="./image/artwork/13_1724.jpg" class="thumbnail">
+                <h3>黃曉桐</h3>
+                <h5>裘錦秋中學（元朗）</h5>
+                <h4>百家姓畫系 中學組 一等獎</h4>
+                </div> 
+        </div>                   
+        <div class="student_menu_home_button">
+            <button class="name_back_btn">返回上頁</button><button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div class="student_menu" id="school_menu">
+        <div>
+            <h2>學校參與獎 小學</h2>
+                <div>
+                    <button class="png_btn school_btn school_btn_1" id="school_pri_menu_btn_1" onclick="displaySchoolArtwork('Pri_1');"><img src="./image/button_pri_1.png" class="menu_btn"></button>
+                    <button class="png_btn school_btn  school_btn_2" id="school_pri_menu_btn_2" onclick="displaySchoolArtwork('Pri_2');"><img src="./image/button_pri_2.png" class="menu_btn"></button>
+                    <button class="png_btn school_btn  school_btn_3" id="school_pri_menu_btn_3" onclick="displaySchoolArtwork('Pri_3');"><img src="./image/button_pri_3.png" class="menu_btn"></button>
+                </div>
+            <h2>學校參與獎 中學</h2>
+                <div>
+                    <button class="png_btn school_btn  school_btn_1" id="school_sec_menu_btn_1" onclick="displaySchoolArtwork('Sec_1');"><img src="./image/button_sec_1.png" class="menu_btn"></button>
+                    <button class="png_btn school_btn  school_btn_2" id="school_sec_menu_btn_2" onclick="displaySchoolArtwork('Sec_2');"><img src="./image/button_sec_2.png" class="menu_btn"></button>
+                    <button class="png_btn school_btn  school_btn_3" id="school_sec_menu_btn_3" onclick="displaySchoolArtwork('Sec_3');"><img src="./image/button_sec_3.png" class="menu_btn"></button>
+                </div>
+        </div>
+        <div>
+            <button class="home_btn">返回主頁</button>
+        </div>
+    </div>
+    <div id="artwork_page">
+        <div id="artwork_wrap">
+        </div>
+    </div>
+    <div id="school_artwork_page">
+        <div id="school_artwork_wrap">
+        </div>
+    </div>
+    
+
+    <script defer>
+        let indexIdle = true;
+        
+        var reloadIndexIdle = function() {
+            if (indexIdle == true) {
+                setTimeout(backToHome, 3*60000);
+            };
+        };
+
+        function resetIndexIdleTime() {
+            clearTimeout(reloadIndexIdle);
+            reloadIndexIdle = setTimeout(backToHome, 3*60000);
+        }
+        window.addEventListener("click", resetIndexIdleTime); // reset idle time when click
+        window.addEventListener("touchstart", resetIndexIdleTime); // reset idle time when touch
+
+        // return to start page when idle             
+        var reloadOnIdle = function() {
+            if (document.getElementById("index_menu").style.visibility == "hidden") {
+                setTimeout(backToHome, 3*60000); // 1000=1sec; 60000=1min
+                };
+        };
+
+        function resetIdleTime() {
+            clearTimeout(reloadOnIdle);
+            reloadOnIdle = setTimeout(backToHome, 3*60000); // 1000=1sec; 60000=1min
+        };
+        window.addEventListener("click", resetIdleTime); // reset idle time when click
+        window.addEventListener("touchstart", resetIdleTime); // reset idle time when touch
+
+        // sound template
+        var boopSound = new Audio("https://hkfygclc.github.io/Boop.mp3");
+
+        function playSound(sound) {
+                sound.play();
+            }
+
+        const artwork_page = document.getElementById("artwork_page");
+        const school_artwork_page = document.getElementById("school_artwork_page");
+        const home_buttons = document.querySelectorAll(".home_btn");
+        const chi_back_buttons = document.querySelectorAll(".chi_back_btn");
+        const west_back_buttons = document.querySelectorAll(".west_back_btn");
+        const name_back_buttons = document.querySelectorAll(".name_back_btn");
+        const chi_menu_button = document.getElementById("menu_btn_1");
+        const west_menu_button = document.getElementById("menu_btn_2");
+        const name_menu_button = document.getElementById("menu_btn_3");
+        const school_menu_button = document.getElementById("menu_btn_4");
+        const closeCarousel = document.getElementById("id-carousel");
+
+        chi_menu_button.addEventListener("click", () => {
+            playSound(boopSound);
+            indexIdle = false;
+            document.getElementById("index_menu").style.visibility = "hidden";
+            document.getElementById("chi_menu").style.visibility = "visible";
+        });
+        west_menu_button.addEventListener("click", () => {
+            playSound(boopSound);
+            indexIdle = false;
+            document.getElementById("index_menu").style.visibility = "hidden";
+            document.getElementById("west_menu").style.visibility = "visible";
+        });
+        name_menu_button.addEventListener("click", () => {
+            playSound(boopSound);
+            indexIdle = false;
+            document.getElementById("index_menu").style.visibility = "hidden";
+            document.getElementById("name_menu").style.visibility = "visible";
+        });
+        school_menu_button.addEventListener("click", () => {
+            playSound(boopSound);
+            indexIdle = false;
+            document.getElementById("index_menu").style.visibility = "hidden";
+            document.getElementById("school_menu").style.visibility = "visible";
+        });
+
+        const group1_button = document.getElementById("chi_menu_btn_1");
+        const group4_button = document.getElementById("chi_menu_btn_2");
+        const group7_button = document.getElementById("chi_menu_btn_3");
+        const group10_button = document.getElementById("chi_menu_btn_4");
+
+        const group2_button = document.getElementById("west_menu_btn_1");
+        const group5_button = document.getElementById("west_menu_btn_2");
+        const group8_button = document.getElementById("west_menu_btn_3");
+        const group11_button = document.getElementById("west_menu_btn_4");
+        const group12_button = document.getElementById("west_menu_btn_5");
+
+        const group3_button = document.getElementById("name_menu_btn_1");
+        const group6_button = document.getElementById("name_menu_btn_2");
+        const group9_button = document.getElementById("name_menu_btn_3");
+        const group13_button = document.getElementById("name_menu_btn_4");
+
+        group1_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("chi_menu").style.visibility = "hidden";
+            document.getElementById("group1").style.visibility = "visible";
+        });
+        group4_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("chi_menu").style.visibility = "hidden";
+            document.getElementById("group4").style.visibility = "visible";
+        });
+        group7_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("chi_menu").style.visibility = "hidden";
+            document.getElementById("group7").style.visibility = "visible";
+        });
+        group10_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("chi_menu").style.visibility = "hidden";
+            document.getElementById("group10").style.visibility = "visible";
+        });
+
+        group2_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("west_menu").style.visibility = "hidden";
+            document.getElementById("group2").style.visibility = "visible";
+        });
+        group5_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("west_menu").style.visibility = "hidden";
+            document.getElementById("group5").style.visibility = "visible";
+        });
+        group8_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("west_menu").style.visibility = "hidden";
+            document.getElementById("group8").style.visibility = "visible";
+        });
+        group11_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("west_menu").style.visibility = "hidden";
+            document.getElementById("group11").style.visibility = "visible";
+        });
+        group12_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("west_menu").style.visibility = "hidden";
+            document.getElementById("group12").style.visibility = "visible";
+        });
+
+        group3_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("name_menu").style.visibility = "hidden";
+            document.getElementById("group3").style.visibility = "visible";
+        });
+        group6_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("name_menu").style.visibility = "hidden";
+            document.getElementById("group6").style.visibility = "visible";
+        });
+        group9_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("name_menu").style.visibility = "hidden";
+            document.getElementById("group9").style.visibility = "visible";
+        });
+        group13_button.addEventListener("click", () => {
+            playSound(boopSound);
+            document.getElementById("name_menu").style.visibility = "hidden";
+            document.getElementById("group13").style.visibility = "visible";
+        });
+
+        home_buttons.forEach((home_button) => {
+            home_button.addEventListener("click", () => {
+                playSound(boopSound);
+                backToHome();
+            });
+        });
+
+        chi_back_buttons.forEach((chi_back_button) => {
+            chi_back_button.addEventListener("click", () => {
+                playSound(boopSound);
+                document.getElementById("group1").style.visibility = "hidden";
+                document.getElementById("group4").style.visibility = "hidden";
+                document.getElementById("group7").style.visibility = "hidden";
+                document.getElementById("group10").style.visibility = "hidden";
+                document.getElementById("chi_menu").style.visibility = "visible";
+            });
+        });
+        west_back_buttons.forEach((west_back_button) => {
+            west_back_button.addEventListener("click", () => {
+                playSound(boopSound);
+                document.getElementById("group2").style.visibility = "hidden";
+                document.getElementById("group5").style.visibility = "hidden";
+                document.getElementById("group8").style.visibility = "hidden";
+                document.getElementById("group11").style.visibility = "hidden";
+                document.getElementById("group12").style.visibility = "hidden";
+                document.getElementById("west_menu").style.visibility = "visible";
+            });
+        });
+        name_back_buttons.forEach((name_back_button) => {
+            name_back_button.addEventListener("click", () => {
+                playSound(boopSound);
+                document.getElementById("group3").style.visibility = "hidden";
+                document.getElementById("group6").style.visibility = "hidden";
+                document.getElementById("group9").style.visibility = "hidden";
+                document.getElementById("group13").style.visibility = "hidden";
+                document.getElementById("name_menu").style.visibility = "visible";
+            });
+        });
+
+        artwork_page.addEventListener("click", () => {
+            playSound(boopSound);
+            hideArtwork();
+            resetDismissArtwork();
+        });
+        
+        school_artwork_page.addEventListener("click", () => {
+            playSound(boopSound);
+            hideArtwork();
+            resetDismissArtwork();
+        });
+
+        function displayArtwork(img_id) {
+            playSound(boopSound);
+            let div = document.getElementById("artwork_wrap");
+            div.innerHTML = "<img src=\"image/artwork/"+img_id+".jpg\" id=\"artwork\">";
+            document.getElementById("artwork_page").style.visibility = "visible";
+            autoDismissArtwork();
+        };
+
+        function displaySchoolArtwork(img_id) {
+            playSound(boopSound);
+            let div = document.getElementById("school_artwork_wrap");
+            div.innerHTML = "<img src=\"image/artwork/"+img_id+".jpg\" id=\"artwork\">";
+            document.getElementById("artwork_page").style.display = "none";
+            document.getElementById("school_artwork_page").style.visibility = "visible";
+            autoDismissArtwork();
+        };
+
+        function hideArtwork() {
+            document.getElementById("artwork_page").style.visibility = "hidden";
+            document.getElementById("school_artwork_page").style.visibility = "hidden";
+        };
+        
+        var toggleArtwork;
+        function autoDismissArtwork() {
+            toggleArtwork = setTimeout(hideArtwork, 20000);
+        };
+        
+        function resetDismissArtwork() {
+            clearTimeout(toggleArtwork);
+        }        
+        
+        function backToHome() {
+            location.reload(false);
+        }
+        
+        closeCarousel.addEventListener("click", () => {
+                playSound(boopSound);
+                backToHome();
+        });
+        
+        if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service-worker.js").then(function(reg){
+                    console.log("Service worker registered.");
+                }).catch(function(err) {
+                    console.log("Service worker rehistration failed. ", err)
+                });
+            }
+
+    </script>
+
+</body>
+</html>
