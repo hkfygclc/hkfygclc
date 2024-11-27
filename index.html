@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="https://hkfygclc.github.io/manifest.json">
     <title>2024《徐悲鴻盃國際青少年兒童美術比賽》</title>
     <link rel="shortcut icon" href="https://clc.hkfyg.org.hk/wp-content/uploads/sites/11/2017/07/logo.png">
@@ -139,7 +140,7 @@
             height: 100%;
             background: transparent;
             position: relative;
-            top: -100%;
+            /* top: -100%; */
             transform: translate(0, -100%);
             backdrop-filter: blur(50px);
             -webkit-backdrop-filter: blur(50px);
@@ -159,7 +160,7 @@
             height: 100%;
             background: transparent;
             position: relative;
-            top: -100%;
+            /* top: -100%; */
             transform: translate(0, -100%);
             backdrop-filter: blur(50px);
             -webkit-backdrop-filter: blur(50px);
@@ -230,7 +231,6 @@
             padding: 0 20px 0 0;
         }
         img#artwork {
-            /*height: 98%;*/
             width: 98%;
             border-radius: 25px;
         }
@@ -258,7 +258,7 @@
 </head>
 <body>
     <div id="background">
-        <span style="opacity: 0.1; font-size: 1vh;">ver 1.3</span>
+        <span style="opacity: 0.1; font-size: 1vh;">ver 1.5 (241128)</span>
     </div>
     <div id="index_menu">
         <div id="index_button">
@@ -1695,23 +1695,7 @@
         </div>
     </div>
     
-
     <script defer>
-        let indexIdle = true;
-        
-        var reloadIndexIdle = function() {
-            if (indexIdle == true) {
-                setTimeout(backToHome, 3*60000);
-            };
-        };
-
-        function resetIndexIdleTime() {
-            clearTimeout(reloadIndexIdle);
-            reloadIndexIdle = setTimeout(backToHome, 3*60000);
-        }
-        window.addEventListener("click", resetIndexIdleTime); // reset idle time when click
-        window.addEventListener("touchstart", resetIndexIdleTime); // reset idle time when touch
-
         // return to start page when idle             
         var reloadOnIdle = function() {
             if (document.getElementById("index_menu").style.visibility == "hidden") {
@@ -1732,7 +1716,8 @@
         function playSound(sound) {
                 sound.play();
             }
-
+        
+        // variable(s) for event listener(s)
         const artwork_page = document.getElementById("artwork_page");
         const school_artwork_page = document.getElementById("school_artwork_page");
         const home_buttons = document.querySelectorAll(".home_btn");
@@ -1744,6 +1729,7 @@
         const name_menu_button = document.getElementById("menu_btn_3");
         const school_menu_button = document.getElementById("menu_btn_4");
         
+        // add event listener(s) for index menu button(s)
         chi_menu_button.addEventListener("click", () => {
             playSound(boopSound);
             indexIdle = false;
@@ -1769,22 +1755,24 @@
             document.getElementById("school_menu").style.visibility = "visible";
         });
 
-        const group1_button = document.getElementById("chi_menu_btn_1");
-        const group4_button = document.getElementById("chi_menu_btn_2");
-        const group7_button = document.getElementById("chi_menu_btn_3");
-        const group10_button = document.getElementById("chi_menu_btn_4");
+        // variable of button(s) to different groups
+        const group1_button = document.getElementById("chi_menu_btn_1"); //中國畫系 幼兒
+        const group4_button = document.getElementById("chi_menu_btn_2"); //中國畫系 初小
+        const group7_button = document.getElementById("chi_menu_btn_3"); //中國畫系 高小
+        const group10_button = document.getElementById("chi_menu_btn_4"); //中國畫系 中學
 
-        const group2_button = document.getElementById("west_menu_btn_1");
-        const group5_button = document.getElementById("west_menu_btn_2");
-        const group8_button = document.getElementById("west_menu_btn_3");
-        const group11_button = document.getElementById("west_menu_btn_4");
-        const group12_button = document.getElementById("west_menu_btn_5");
+        const group2_button = document.getElementById("west_menu_btn_1"); //西洋畫系 幼兒
+        const group5_button = document.getElementById("west_menu_btn_2"); //西洋畫系 初小
+        const group8_button = document.getElementById("west_menu_btn_3"); //西洋畫系 高小
+        const group11_button = document.getElementById("west_menu_btn_4"); //西洋畫系 初中
+        const group12_button = document.getElementById("west_menu_btn_5"); //西洋畫系 高中
 
-        const group3_button = document.getElementById("name_menu_btn_1");
-        const group6_button = document.getElementById("name_menu_btn_2");
-        const group9_button = document.getElementById("name_menu_btn_3");
-        const group13_button = document.getElementById("name_menu_btn_4");
+        const group3_button = document.getElementById("name_menu_btn_1"); //百家姓畫系 幼兒
+        const group6_button = document.getElementById("name_menu_btn_2"); //百家姓畫系 初小
+        const group9_button = document.getElementById("name_menu_btn_3"); //百家姓畫系 高小
+        const group13_button = document.getElementById("name_menu_btn_4"); //百家姓畫系 中學
 
+        // event listener(s) to transit to different groups album
         group1_button.addEventListener("click", () => {
             playSound(boopSound);
             document.getElementById("chi_menu").style.visibility = "hidden";
@@ -1853,13 +1841,15 @@
             document.getElementById("group13").style.visibility = "visible";
         });
 
+        // back to index menu event listener
         home_buttons.forEach((home_button) => {
             home_button.addEventListener("click", () => {
                 playSound(boopSound);
                 backToHome();
             });
         });
-
+        
+        // go back to upper level event listener (chinese painting)
         chi_back_buttons.forEach((chi_back_button) => {
             chi_back_button.addEventListener("click", () => {
                 playSound(boopSound);
@@ -1870,6 +1860,7 @@
                 document.getElementById("chi_menu").style.visibility = "visible";
             });
         });
+        // go back to upper level event listener (western painting)
         west_back_buttons.forEach((west_back_button) => {
             west_back_button.addEventListener("click", () => {
                 playSound(boopSound);
@@ -1881,6 +1872,7 @@
                 document.getElementById("west_menu").style.visibility = "visible";
             });
         });
+        // go back to upper level event listener (surname topic painting)
         name_back_buttons.forEach((name_back_button) => {
             name_back_button.addEventListener("click", () => {
                 playSound(boopSound);
@@ -1892,18 +1884,20 @@
             });
         });
 
+        // event listener to open artwork display window
         artwork_page.addEventListener("click", () => {
             playSound(boopSound);
             hideArtwork();
             resetDismissArtwork();
         });
-        
+        // event listener to open school particpation awards display window
         school_artwork_page.addEventListener("click", () => {
             playSound(boopSound);
             hideArtwork();
             resetDismissArtwork();
         });
 
+        // function to generate artwork according to button's ID clicked
         function displayArtwork(img_id) {
             playSound(boopSound);
             let div = document.getElementById("artwork_wrap");
@@ -1912,6 +1906,7 @@
             autoDismissArtwork();
         };
 
+        // function to generate school particpation award according to button's ID clicked
         function displaySchoolArtwork(img_id) {
             playSound(boopSound);
             let div = document.getElementById("school_artwork_wrap");
@@ -1921,31 +1916,35 @@
             autoDismissArtwork();
         };
 
+        // function to hide artwork on click
         function hideArtwork() {
             document.getElementById("artwork_page").style.visibility = "hidden";
             document.getElementById("school_artwork_page").style.visibility = "hidden";
         };
         
+        // function to auto dismiss opened artwork
         var toggleArtwork;
         function autoDismissArtwork() {
-            toggleArtwork = setTimeout(hideArtwork, 20000);
+            toggleArtwork = setTimeout(hideArtwork, 20000); // dismiss time = 20s, 1000 = 1s
         };
         
+        // clear auto dismiss timer
         function resetDismissArtwork() {
             clearTimeout(toggleArtwork);
         }        
         
+        // function to reload page
         function backToHome() {
             location.reload(false);
         }
         
         if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("service-worker.js").then(function(reg){
+            navigator.serviceWorker.register("service-worker.js").then(function(reg) {
                     console.log("Service worker registered.");
                 }).catch(function(err) {
                     console.log("Service worker rehistration failed. ", err)
                 });
-            }
+        };
 
     </script>
 
