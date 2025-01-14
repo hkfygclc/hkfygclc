@@ -6,8 +6,8 @@ const URLS = [
     "https://hkfygclc.github.io/Boop.mp3"
 ];
 const appImages = [
-    "/Images/MBTI%20icon_p1_pp1.png",
-    "/Images/MBTI%20icon_p1_pp2.png",
+    "/Images/MBTI_icon_p1_pp1.png",
+    "/Images/MBTI_icon_p1_pp2.png",
     "/Images/MBTI%20icon_INTJ.png",
     "/Images/MBTI%20icon_INTP.png",
     "/Images/MBTI%20icon_INFJ.png",
