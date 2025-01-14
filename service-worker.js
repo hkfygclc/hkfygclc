@@ -4,7 +4,7 @@ const URLS = [
     "/index.html",
     "/qrcode.min.js",
     "https://hkfygclc.github.io/Boop.mp3"
-]
+];
 const appImages = [
     "/Images/MBTI%20icon_p1_pp1.png",
     "/Images/MBTI%20icon_p1_pp2.png",
